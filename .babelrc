@@ -1,0 +1,24 @@
+{
+  "presets": [
+    "react",
+    "env",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "lodash",
+    "syntax-dynamic-import",
+    "babel-plugin-styled-components",
+    "transform-react-inline-elements",
+    "transform-react-constant-elements",
+    "transform-runtime",
+    [
+      "direct-import",
+      [
+        "material-ui",
+        "react-router",
+        "react-router-dom"
+      ]
+    ]
+  ]
+}
