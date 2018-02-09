@@ -1,12 +1,12 @@
 // React
-import React, { Component } from 'react';
+import React from 'react';
 
 // Components
 import Revenues from './Revenues/Revenues.jsx'
 import Expenses from './Expenses/Expenses.jsx'
 
 // Styled Components
-import { Container, Page, Nav } from './Main_style'
+import { Container, Page } from './Main_style'
 
 // Material-UI
 import { Tabs, Tab } from 'material-ui/Tabs';

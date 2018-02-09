@@ -9,7 +9,7 @@ export const ContentContainer = styled.div`
 export const Button = styled(RaisedButton)`
     margin: 5px;
     display: inline;
-`
+`;
 
 
 

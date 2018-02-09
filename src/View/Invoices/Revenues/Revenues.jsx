@@ -1,7 +1,9 @@
+// React
 import React, { Component } from 'react';
 
-import { ContentContainer, Button } from './Revenues_style';
-
+// Material UI
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 import {
   Table,
   TableBody,
@@ -11,55 +13,49 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+//Styled Components
+import { ContentContainer, Button } from './Revenues_style';
+
+// Components
+import NewInvoice from './AddInvoice'
+
 
 export default class Revenues extends Component {
   render() {
       return(
         <ContentContainer>
-          <Button label="WYSTAW NOWĄ FAKTURĘ" primary={true}></Button>
+          <NewInvoice />
           <Button label="EDYTUJ" primary={true}></Button>
           <Button label="GENERUJ PDF" secondary={true}></Button>
-            <TableExampleSimple/>
+            <Data />
         </ContentContainer>
       );
  }
 } 
 
-const TableExampleSimple = () => (
+const Data = () => (
   <Table>
-    <TableHeader displayHeaderCheckbox={false}>
+    <TableHeader displaySelectAll={false}>
       <TableRow>
-        <TableHeaderColumn>ID</TableHeaderColumn>
-        <TableHeaderColumn>Name</TableHeaderColumn>
-        <TableHeaderColumn>Status</TableHeaderColumn>
+        <TableHeaderColumn>Data Wystawienia</TableHeaderColumn>
+        <TableHeaderColumn>Numer</TableHeaderColumn>
+        <TableHeaderColumn>Kontrahent</TableHeaderColumn>
+        <TableHeaderColumn>Opis</TableHeaderColumn>
+        <TableHeaderColumn>Netto</TableHeaderColumn>
+        <TableHeaderColumn>Brutto</TableHeaderColumn>
       </TableRow>
     </TableHeader>
-    <TableBody displayRowCheckbox={false}>
+    <TableBody displayRowCheckbox={false} >
       <TableRow>
         <TableRowColumn>1</TableRowColumn>
-        <TableRowColumn>John Smith</TableRowColumn>
-        <TableRowColumn>Employed</TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>2</TableRowColumn>
-        <TableRowColumn>Randal White</TableRowColumn>
-        <TableRowColumn>Unemployed</TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>3</TableRowColumn>
-        <TableRowColumn>Stephanie Sanders</TableRowColumn>
-        <TableRowColumn>Employed</TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>4</TableRowColumn>
-        <TableRowColumn>Steve Brown</TableRowColumn>
-        <TableRowColumn>Employed</TableRowColumn>
-      </TableRow>
-      <TableRow>
-        <TableRowColumn>5</TableRowColumn>
-        <TableRowColumn>Christopher Nolan</TableRowColumn>
-        <TableRowColumn>Unemployed</TableRowColumn>
+        <TableRowColumn>22-01-2018</TableRowColumn>
+        <TableRowColumn>000/000/003</TableRowColumn>
+        <TableRowColumn>Janusz</TableRowColumn>
+        <TableRowColumn>Węgiel</TableRowColumn>
+        <TableRowColumn>100,00</TableRowColumn>
+        <TableRowColumn>123,00</TableRowColumn>
       </TableRow>
     </TableBody>
   </Table>
 );
+
