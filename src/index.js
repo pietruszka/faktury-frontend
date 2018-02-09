@@ -1,7 +1,14 @@
+// React
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// Styles
 import './global.css';
+
+// Main Home View
 import Home from './View/Home';
+
+// Service Worker
 import registerServiceWorker from './registerServiceWorker';
 
 // Material-UI 
@@ -22,5 +29,5 @@ const App = () => (
   </MuiThemeProvider>
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('app'));
 registerServiceWorker();
