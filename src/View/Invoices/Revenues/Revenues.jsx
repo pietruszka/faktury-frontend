@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 
 // Material UI
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import {
   Table,
   TableBody,
@@ -17,14 +15,14 @@ import {
 import { ContentContainer, Button } from './Revenues_style';
 
 // Components
-import NewInvoice from './AddInvoice'
+import AddInvoice from './AddInvoice'
 
 
 export default class Revenues extends Component {
   render() {
       return(
         <ContentContainer>
-          <NewInvoice />
+          <AddInvoice />
           <Button label="EDYTUJ" primary={true}></Button>
           <Button label="GENERUJ PDF" secondary={true}></Button>
             <Data />

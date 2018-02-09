@@ -11,7 +11,6 @@ import { Container, Page } from './Main_style'
 // Material-UI
 import { Tabs, Tab } from 'material-ui/Tabs';
 import AppBar from 'material-ui/AppBar';
-import { indigo500 } from 'material-ui/styles/colors';
 
 
 const InvoicesMain = () => (

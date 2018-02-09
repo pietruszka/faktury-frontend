@@ -9,7 +9,7 @@ import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 
 // Styled Components
-import { Container, Page, Form, Field, Button, SubmitButton } from './Form_style';
+import { Container, Page, Form, Button, SubmitButton } from './Form_style';
 
 const Forms = () => (
   <Router>
