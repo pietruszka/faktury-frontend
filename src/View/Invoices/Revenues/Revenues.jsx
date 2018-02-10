@@ -23,9 +23,8 @@ export default class Revenues extends Component {
       return(
         <ContentContainer>
           <AddInvoice />
-          <Button label="EDYTUJ" primary={true}></Button>
           <Button label="GENERUJ PDF" secondary={true}></Button>
-            <Data />
+          <Data />
         </ContentContainer>
       );
  }
@@ -41,17 +40,18 @@ const Data = () => (
         <TableHeaderColumn>Opis</TableHeaderColumn>
         <TableHeaderColumn>Netto</TableHeaderColumn>
         <TableHeaderColumn>Brutto</TableHeaderColumn>
+        <TableHeaderColumn><Button label="EDYTUJ" primary={true}></Button></TableHeaderColumn>
       </TableRow>
     </TableHeader>
     <TableBody displayRowCheckbox={false} >
       <TableRow>
-        <TableRowColumn>1</TableRowColumn>
         <TableRowColumn>22-01-2018</TableRowColumn>
         <TableRowColumn>000/000/003</TableRowColumn>
         <TableRowColumn>Janusz</TableRowColumn>
         <TableRowColumn>Węgiel</TableRowColumn>
         <TableRowColumn>100,00</TableRowColumn>
         <TableRowColumn>123,00</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
       </TableRow>
     </TableBody>
   </Table>
