@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 export const Container = styled.div`
@@ -11,5 +12,11 @@ export const Container = styled.div`
 export const Page = styled(Paper)`
  width: 100%;
  height: 100%;
+`;
+
+
+export const Button = styled(RaisedButton)`
+  margin: 10px;
+  display: inline;
 `;
 

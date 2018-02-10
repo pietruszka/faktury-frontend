@@ -30,30 +30,54 @@ export default class Revenues extends Component {
  }
 } 
 
-const Data = () => (
-  <Table>
-    <TableHeader displaySelectAll={false}>
-      <TableRow>
-        <TableHeaderColumn>Data Wystawienia</TableHeaderColumn>
-        <TableHeaderColumn>Numer</TableHeaderColumn>
-        <TableHeaderColumn>Kontrahent</TableHeaderColumn>
-        <TableHeaderColumn>Opis</TableHeaderColumn>
-        <TableHeaderColumn>Netto</TableHeaderColumn>
-        <TableHeaderColumn>Brutto</TableHeaderColumn>
-        <TableHeaderColumn><Button label="EDYTUJ" primary={true}></Button></TableHeaderColumn>
-      </TableRow>
-    </TableHeader>
-    <TableBody displayRowCheckbox={false} >
-      <TableRow>
-        <TableRowColumn>22-01-2018</TableRowColumn>
-        <TableRowColumn>000/000/003</TableRowColumn>
-        <TableRowColumn>Janusz</TableRowColumn>
-        <TableRowColumn>Węgiel</TableRowColumn>
-        <TableRowColumn>100,00</TableRowColumn>
-        <TableRowColumn>123,00</TableRowColumn>
-        <TableRowColumn></TableRowColumn>
-      </TableRow>
-    </TableBody>
-  </Table>
-);
+class Data extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      allowEdit: false,  
+    }
+    this.handleClickEdit = this.handleClickEdit.bind(this);
+    this.editIcon = this.editIcon.bind(this);
+  }
+
+  handleClickEdit() {
+      if (this.state.allowEdit == false) {
+        this.setState({allowEdit: true});
+      } else {
+        this.setState({allowEdit: false}); 
+      }
+  }
+    
+  editIcon() {
+      return(<i class="material-icons">clear</i>);
+  }
+  render() {
+    return(
+      <Table>
+        <TableHeader displaySelectAll={false}>
+          <TableRow>
+            <TableHeaderColumn>Data Wystawienia</TableHeaderColumn>
+            <TableHeaderColumn>Numer</TableHeaderColumn>
+            <TableHeaderColumn>Kontrahent</TableHeaderColumn>
+            <TableHeaderColumn>Opis</TableHeaderColumn>
+            <TableHeaderColumn>Netto</TableHeaderColumn>
+            <TableHeaderColumn>Brutto</TableHeaderColumn>
+            <TableHeaderColumn><Button label="EDYTUJ" primary={true} onClick={this.handleClickEdit}></Button></TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+        <TableBody displayRowCheckbox={false} >
+          <TableRow>
+            <TableRowColumn>22-01-2018</TableRowColumn>
+            <TableRowColumn>000/000/003</TableRowColumn>
+            <TableRowColumn>Janusz</TableRowColumn>
+            <TableRowColumn>Węgiel</TableRowColumn>
+            <TableRowColumn>100,00</TableRowColumn>
+            <TableRowColumn>123,00</TableRowColumn>
+            <TableRowColumn>{ this.state.allowEdit ? this.editIcon() : null }</TableRowColumn>
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+  }
+}
 

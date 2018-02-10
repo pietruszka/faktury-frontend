@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 // Material UI
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import SvgIcon from 'material-ui/SvgIcon';
 
 import MenuItem from 'material-ui/MenuItem';
 import {
@@ -82,13 +81,15 @@ class AddForm extends Component {
   }
     
   handleClickEdit() {
-      this.setState({allowEdit: true});
-      console.log(2);
+      if (this.state.allowEdit == false) {
+        this.setState({allowEdit: true});
+      } else {
+        this.setState({allowEdit: false}); 
+      }
   }
     
   editIcon() {
-      return(<SvgIcon> <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-  </SvgIcon>);
+      return(<i class="material-icons">clear</i>);
   }
      
   render() {
