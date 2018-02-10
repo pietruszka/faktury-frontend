@@ -36,7 +36,7 @@ class SettingsMain extends Component {
   }
     
   handleClickSave() {
-    this.setState({showSaveButton: false, disabledEdit: true})
+    this.setState({showSaveButton: false, disabledEdit: true});
   }
     
   saveButton() {
