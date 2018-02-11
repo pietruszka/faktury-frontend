@@ -15,26 +15,26 @@ import {
 import { ContentContainer, Button } from './Revenues_style';
 
 // Components
-import AddInvoice from './AddInvoice'
+import AddInvoice from './../../../Components/AddInvoice';
 
 
 export default class Revenues extends Component {
   render() {
       return(
         <ContentContainer>
-          <AddInvoice />
+          <AddInvoice isExpanse="false"/>
           <Button label="GENERUJ PDF" secondary={true}></Button>
           <Data />
         </ContentContainer>
       );
  }
-} 
+}
 
 class Data extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allowEdit: false,  
+      allowEdit: false,
     }
     this.handleClickEdit = this.handleClickEdit.bind(this);
     this.editIcon = this.editIcon.bind(this);
@@ -44,12 +44,12 @@ class Data extends Component {
       if (this.state.allowEdit == false) {
         this.setState({allowEdit: true});
       } else {
-        this.setState({allowEdit: false}); 
+        this.setState({allowEdit: false});
       }
   }
-    
+
   editIcon() {
-      return(<i class="material-icons">clear</i>);
+      return(<i className="material-icons">clear</i>);
   }
   render() {
     return(
@@ -80,4 +80,3 @@ class Data extends Component {
     );
   }
 }
-

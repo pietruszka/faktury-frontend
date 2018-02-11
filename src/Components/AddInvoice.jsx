@@ -16,16 +16,16 @@ import {
 } from 'material-ui/Table';
 
 // Styled Components
-import { Button, Form, InputsContainer, TextInput, Date, ComboBox } from './Revenues_style';
+import { Button, Form, InputsContainer, TextInput, Date, ComboBox } from './../View/Invoices/Revenues/Revenues_style';
 
 
 class AddInvoice extends Component {
   constructor(props) {
-    super(props);   
+    super(props);
     this.state = {
       open: false,
     };
-    
+
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
@@ -45,9 +45,9 @@ class AddInvoice extends Component {
         primary={true}
         onClick={this.handleClose}
       />,
-      
+
     ];
-    
+
     const style = {
         display: 'inline',
     };
@@ -65,81 +65,63 @@ class AddInvoice extends Component {
 
 class AddForm extends Component {
   constructor(props) {
-    super(props);   
+    super(props);
     this.state = {
+      isExpense: this.props.isExpense,
+      dateCreated: null,
+      dateSold: null,
       paymentType: '',
+      contractor: '',
+      invoiceNumber: '',
+      description: '',
+      items: [],
       allowEdit: false,
     };
-    
+
     this.handleChangeCombo = this.handleChangeCombo.bind(this);
     this.handleClickEdit = this.handleClickEdit.bind(this);
     this.editIcon = this.editIcon.bind(this);
   }
-  
-  handleChangeCombo(event, index, value) { 
+
+  handleChangeCombo(event, index, value) {
       this.setState({paymentType : value});
   }
-    
+
   handleClickEdit() {
       if (this.state.allowEdit == false) {
         this.setState({allowEdit: true});
       } else {
-        this.setState({allowEdit: false}); 
+        this.setState({allowEdit: false});
       }
   }
-    
+
   editIcon() {
       return(<i class="material-icons">clear</i>);
   }
-     
+
+  handleSubmit() {
+    console.log(this.state);
+  }
+
   render() {
+    console.log(this);
     return(
-      <div>
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
             <InputsContainer>
-            <TextInput floatingLabelText="Kontrahent" />
+            <TextInput floatingLabelText="Kontrahent" value={this.state.contractor}/>
             <TextInput floatingLabelText="Numer faktury" />
             <Date floatingLabelText="Data wystawienia" />
             <Date floatingLabelText="Data sprzedaży" />
             <Date floatingLabelText="Termin płatności" />
             <TextInput floatingLabelText="Opis" />
             <ComboBox floatingLabelText="Forma płatności" value={this.state.paymentType} onChange={this.handleChangeCombo}>
-              <MenuItem value={1} primaryText="Gotówka" />
-              <MenuItem value={2} primaryText="Przelew" />
-              <MenuItem value={3} primaryText="Karta" />
+              <MenuItem value={"Gotówka"} primaryText="Gotówka" />
+              <MenuItem value={"Przelew"} primaryText="Przelew" />
+              <MenuItem value={"Karta"} primaryText="Karta" />
             </ComboBox> <br />
             </InputsContainer>
-            <Table>
-              <TableHeader displaySelectAll={false}>
-                <TableRow>
-                  <TableHeaderColumn>Nazwa</TableHeaderColumn>
-                  <TableHeaderColumn>Cena</TableHeaderColumn>
-                  <TableHeaderColumn>Ilość</TableHeaderColumn>
-                  <TableHeaderColumn>j.m.</TableHeaderColumn>
-                  <TableHeaderColumn>Netto</TableHeaderColumn>
-                  <TableHeaderColumn>Stawka VAT</TableHeaderColumn>
-                  <TableHeaderColumn>Wartość VAT</TableHeaderColumn>
-                  <TableHeaderColumn>Brutto</TableHeaderColumn>
-                  <TableHeaderColumn><Button label="EDYTUJ" primary={true} onClick={this.handleClickEdit}></Button></TableHeaderColumn>
-                </TableRow>
-              </TableHeader>
-              <TableBody displayRowCheckbox={false} >
-                <TableRow>
-                  <TableRowColumn>Krzesło</TableRowColumn>
-                  <TableRowColumn>100,00</TableRowColumn>
-                  <TableRowColumn>1</TableRowColumn>
-                  <TableRowColumn>szt.</TableRowColumn>
-                  <TableRowColumn>100,00</TableRowColumn>
-                  <TableRowColumn>23%</TableRowColumn>
-                  <TableRowColumn>23</TableRowColumn>
-                  <TableRowColumn>123</TableRowColumn>
-                  <TableRowColumn>{ this.state.allowEdit ? this.editIcon() : null }</TableRowColumn>
-                </TableRow>
-              </TableBody>
-            </Table>
             <Button type="submit" label="Dodaj" primary={true} />
           </Form>
-      </div>
     );
   }
 }

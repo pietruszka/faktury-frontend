@@ -11,6 +11,7 @@ import { ContentContainer, StyledRaisedButton } from './Expenses_style'
 import RaisedButton from 'material-ui/RaisedButton';
 import { fetchInvoices } from './../../../Actions/Index';
 import DeleteDialog from './../../../Components/DeleteDialog';
+import InvoiceReduxForm from './../../../Components/InvoiceReduxForm';
 import { connect } from 'react-redux';
 
 class Expenses extends Component {
@@ -19,6 +20,9 @@ class Expenses extends Component {
   }
 
   renderTable = (invoice, i) => {
+    if(!invoice.items) {
+      return null;
+    }
     const netto = invoice.items.map((item)=>{
       return item.net
     });
@@ -52,7 +56,7 @@ class Expenses extends Component {
     }
       return(
         <Fragment>
-          <StyledRaisedButton label="Dodaj Wydatek" primary={true} />
+          <InvoiceReduxForm isExpanse="true" />
           <Table>
             <TableHeader displaySelectAll={false}>
               <TableRow>
