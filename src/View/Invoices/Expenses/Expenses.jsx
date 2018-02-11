@@ -12,6 +12,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { fetchInvoices } from './../../../Actions/Index';
 import DeleteDialog from './../../../Components/DeleteDialog';
 import InvoiceReduxForm from './../../../Components/InvoiceReduxForm';
+import AddInvoiceComp from './../../../Components/AddInvoice';
+import FormDialog from './../../../Components/FormDialog';
 import { connect } from 'react-redux';
 
 class Expenses extends Component {

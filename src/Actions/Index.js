@@ -24,7 +24,7 @@ export function deleteInvoice(id, cb) {
 }
 
 export function addInvoice(invoice, cb) {
-  const request = axios.post(`http://localhost:3004/faktury`, invoice).then(()=> cb() );
+  const request = axios.post(`http://localhost:3004/faktury`, invoice);
   return {
     type: ADD_INVOICE,
     payload: request

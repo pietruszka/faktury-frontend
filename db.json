@@ -1,252 +1,355 @@
 {
-  "faktury":[
-      {
-       "id": 24436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-      "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 34436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 44436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 54436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1355,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 101351350,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 64436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1531,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 654,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 74436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 4041,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1245,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 84436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 94436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 20,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      }
-],
-   "user": {
-     "id": 24436455475,
-     "company_name": "Abc",
-     "nip": 3454354,
-     "regon": 5325435,
-     "street": "Główna",
-     "building_number": "14",
-     "flat_number": "c",
-     "postal_code": "55-353",
-     "city": "Wrocław",
-     "vehicle": [
+  "faktury": [
+    {
+      "id": 24436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
         {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 1000,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 100,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "id": 34436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
+        {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 1000,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 100,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "id": 44436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
+        {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 1000,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 100,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "id": 54436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
+        {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 1355,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 101351350,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "id": 64436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
+        {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 1531,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 654,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "id": 74436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
+        {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 4041,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 1245,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "id": 84436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
+        {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 1000,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 100,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "id": 94436455475,
+      "dateCreated": "325423534534",
+      "dateSold": "3254233463464",
+      "datePayment": "325443464534",
+      "payment_type": "gotówka",
+      "invoiceNumber": "DJS5644",
+      "contractor": "Efg Sp. Z.o.o",
+      "description": "Zakup 3, sklepy",
+      "items": [
+        {
+          "name": "Sprzęt biurowy",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 20,
+          "vat": 23
+        },
+        {
+          "name": "Lampa",
+          "quantity": 1,
+          "unit": "szt",
+          "net": 100,
+          "vat": 23
+        }
+      ],
+      "file": "/invoice/2342343546.pdf"
+    },
+    {
+      "contractor": "a",
+      "invoiceNumber": "a",
+      "dateCreated": "2018-02-11T04:10:24.576Z",
+      "dateSold": "2018-02-11T04:10:27.909Z",
+      "datePayment": "2018-02-11T04:10:29.122Z",
+      "paymentType": "Karta",
+      "description": "afwwa",
+      "id": 94436455476
+    },
+    {
+      "contractor": "ads",
+      "invoiceNumber": "asdas",
+      "dateCreated": "2018-02-11T04:11:33.710Z",
+      "dateSold": "2018-02-11T04:11:36.013Z",
+      "datePayment": "2018-02-11T04:11:37.933Z",
+      "paymentType": "Przelew",
+      "description": "asdwafaf",
+      "id": 94436455477
+    },
+    {
+      "contractor": "asd",
+      "invoiceNumber": "asdas",
+      "dateCreated": "2018-02-11T04:12:57.685Z",
+      "dateSold": "2018-02-11T04:12:59.649Z",
+      "datePayment": "2018-02-11T04:13:01.036Z",
+      "paymentType": "Karta",
+      "description": "asfsafa",
+      "id": 94436455478
+    },
+    {
+      "contractor": "asd",
+      "invoiceNumber": "asdas",
+      "dateCreated": "2018-02-11T04:15:25.700Z",
+      "dateSold": "2018-02-11T04:15:27.845Z",
+      "datePayment": "2018-02-11T04:15:28.994Z",
+      "paymentType": "Gotówka",
+      "description": "efef",
+      "id": 94436455479
+    },
+    {
+      "contractor": "3",
+      "invoiceNumber": "3",
+      "dateCreated": "2018-02-11T04:21:52.742Z",
+      "dateSold": "2018-02-11T04:21:55.610Z",
+      "datePayment": "2018-02-11T04:21:56.983Z",
+      "payment_type": "Przelew",
+      "description": "awffw",
+      "id": 94436455480
+    },
+    {
+      "contractor": "a",
+      "payment_type": "Przelew",
+      "description": "wwf",
+      "dateCreated": "2018-02-11T04:23:19.984Z",
+      "invoiceNumber": "1242412",
+      "dateSold": "2018-02-11T04:23:23.257Z",
+      "datePayment": "2018-02-11T04:23:25.933Z",
+      "id": 94436455481
+    },
+    {
+      "contractor": "asd",
+      "invoiceNumber": "asf",
+      "dateCreated": "2018-02-11T04:23:59.451Z",
+      "dateSold": "2018-02-11T04:24:01.628Z",
+      "datePayment": "2018-02-11T04:24:04.221Z",
+      "payment_type": "Karta",
+      "description": "fwaff",
+      "id": 94436455482
+    },
+    {
+      "contractor": "asd",
+      "invoiceNumber": "asf",
+      "dateCreated": "2018-02-11T04:23:59.451Z",
+      "dateSold": "2018-02-11T04:24:01.628Z",
+      "datePayment": "2018-02-11T04:24:04.221Z",
+      "payment_type": "Karta",
+      "description": "fwaff",
+      "id": 94436455483
+    },
+    {
+      "dateCreated": "2018-02-11T21:53:50.524Z",
+      "invoiceNumber": "dsv",
+      "contractor": "sdv",
+      "dateSold": "2018-02-11T21:53:55.646Z",
+      "datePayment": "2018-02-11T21:53:57.534Z",
+      "payment_type": "Gotówka",
+      "description": "avav",
+      "id": 94436455484
+    },
+    {
+      "dateCreated": "2018-02-11T21:53:50.524Z",
+      "invoiceNumber": "dsv",
+      "contractor": "sdv",
+      "dateSold": "2018-02-11T21:53:55.646Z",
+      "datePayment": "2018-02-11T21:53:57.534Z",
+      "payment_type": "Gotówka",
+      "description": "avav",
+      "id": 94436455485
+    }
+  ],
+  "user": {
+    "id": 24436455475,
+    "company_name": "Abc",
+    "nip": 3454354,
+    "regon": 5325435,
+    "street": "Główna",
+    "building_number": "14",
+    "flat_number": "c",
+    "postal_code": "55-353",
+    "city": "Wrocław",
+    "vehicle": [
+      {
         "name": "Opel",
         "register_number": "dwa 3545",
         "type": "dostawczy",
         "owner": "leasing",
         "volume": 1400,
         "deducted_costs": 50
-        },
-        {
+      },
+      {
         "name": "Volvo",
         "register_number": "ds 34423",
         "type": "osobowy",
         "owner": "kredyt",
         "volume": 1400,
         "deducted_costs": 100
-        }
-     ],
-     "invoice": ["23452345345", "43345345345", "4234234"],
-     "activate": true
+      }
+    ],
+    "invoice": [
+      "23452345345",
+      "43345345345",
+      "4234234"
+    ],
+    "activate": true
   }
-
 }

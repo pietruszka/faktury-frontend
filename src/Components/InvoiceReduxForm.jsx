@@ -17,7 +17,7 @@ const validate = values => {
   const requiredFields = [
     'contractor',
     'invoiceNumber',
-    'paymentType',
+    'payment_type',
     'dateCreated',
     'dateSold',
     'datePayment',
@@ -88,76 +88,32 @@ const renderSelectField = ({
 
   const onSubmit = (values) => {
     console.log(values);
-    addInvoice(values, () => this.props.fetchInvoices())
+    addInvoice(values);
   }
 
 const InvoiceReduxForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit(onSubmit.bind(this))}>
-      <div>
-        <Field
-          name="contractor"
-          component={renderTextField}
-          floatingLabelText="Kontrahent"
-        />
-      </div>
-      <div>
-        <Field
-          name="invoiceNumber"
-          component={renderTextField}
-          floatingLabelText="Numer Faktury"
-        />
 
-      </div>
+        <Field name="contractor" component={renderTextField} floatingLabelText="Kontrahent"v/>
 
-      <div>
-        <Field
-          name="dateCreated"
-          component={renderDatePicker}
-          label="Data Wystawienia"
-        />
-      </div>
+        <Field name="invoiceNumber" component={renderTextField} floatingLabelText="Numer Faktury" />
 
-      <div>
-        <Field
-          name="dateSold"
-          component={renderDatePicker}
-          label="Data Sprzedaży"
-        />
-      </div>
+        <Field name="dateCreated" component={renderDatePicker} label="Data Wystawienia" />
 
-      <div>
-        <Field
-          name="datePayment"
-          component={renderDatePicker}
-          label="Termin Płatności"
-        />
-      </div>
+        <Field name="dateSold" component={renderDatePicker} label="Data Sprzedaży" />
 
-      <div>
-        <Field
-          name="paymentType"
-          component={renderSelectField}
-          floatingLabelText="Forma Płatności"
-        >
+        <Field name="datePayment" component={renderDatePicker} label="Termin Płatności" />
+
+        <Field name="payment_type" component={renderSelectField} floatingLabelText="Forma Płatności" >
           <MenuItem value="Gotówka" primaryText="Gotówka" />
           <MenuItem value="Przelew" primaryText="Przelew" />
           <MenuItem value="Karta" primaryText="Karta" />
         </Field>
-      </div>
 
+        <Field name="description" component={renderTextField} floatingLabelText="Opis" multiLine={true} rows={2} />
 
-
-      <div>
-        <Field
-          name="description"
-          component={renderTextField}
-          floatingLabelText="Opis"
-          multiLine={true}
-          rows={2}
-        />
-      </div>
       <div>
         <RaisedButton label="Dodaj" primary={true} type="submit" disabled={pristine || submitting} style={style}/>
         <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset}/>
