@@ -255,6 +255,126 @@
         }
       ],
       "id": 94436455487
+    },
+    {
+      "contractor": "jghj",
+      "invoiceNumber": "fghj",
+      "description": "ghj",
+      "isExpanse": true,
+      "dateCreated": "2018-02-06T23:00:00.000Z",
+      "dateSold": "2018-02-15T23:00:00.000Z",
+      "datePayment": "2018-02-22T23:00:00.000Z",
+      "payment_type": "Gotówka",
+      "items": [
+        {
+          "name": "gdfg",
+          "quantity": "2",
+          "unit": "szt",
+          "priceNet": "34",
+          "vat": "3"
+        }
+      ],
+      "id": 94436455488
+    },
+    {
+      "contractor": "jghj",
+      "invoiceNumber": "fghj",
+      "description": "ghj",
+      "isExpanse": true,
+      "dateCreated": "2018-02-06T23:00:00.000Z",
+      "dateSold": "2018-02-15T23:00:00.000Z",
+      "datePayment": "2018-02-22T23:00:00.000Z",
+      "payment_type": "Gotówka",
+      "items": [
+        {
+          "name": "gdfg",
+          "quantity": "2",
+          "unit": "szt",
+          "priceNet": "34",
+          "vat": "3"
+        }
+      ],
+      "id": 94436455489
+    },
+    {
+      "contractor": "jghj",
+      "invoiceNumber": "fghj",
+      "description": "ghj",
+      "isExpanse": true,
+      "dateCreated": "2018-02-06T23:00:00.000Z",
+      "dateSold": "2018-02-15T23:00:00.000Z",
+      "datePayment": "2018-02-22T23:00:00.000Z",
+      "payment_type": "Gotówka",
+      "items": [
+        {
+          "name": "gdfg",
+          "quantity": "2",
+          "unit": "szt",
+          "priceNet": "34",
+          "vat": "3"
+        }
+      ],
+      "id": 94436455490
+    },
+    {
+      "contractor": "sdfds",
+      "invoiceNumber": "fdsf",
+      "description": "sdfsdfds",
+      "dateCreated": "2018-02-06T23:00:00.000Z",
+      "dateSold": "2018-02-14T23:00:00.000Z",
+      "datePayment": "2018-02-09T23:00:00.000Z",
+      "payment_type": "Gotówka",
+      "items": [
+        {
+          "name": "sdf",
+          "quantity": "3",
+          "unit": "kg",
+          "vat": "3",
+          "priceNet": "4"
+        }
+      ],
+      "isExpanse": false,
+      "id": 94436455491
+    },
+    {
+      "contractor": "sdfds",
+      "invoiceNumber": "fdsf",
+      "description": "sdfsdfds",
+      "dateCreated": "2018-02-06T23:00:00.000Z",
+      "dateSold": "2018-02-14T23:00:00.000Z",
+      "datePayment": "2018-02-09T23:00:00.000Z",
+      "payment_type": "Gotówka",
+      "items": [
+        {
+          "name": "sdf",
+          "quantity": "3",
+          "unit": "kg",
+          "vat": "3",
+          "priceNet": "4"
+        }
+      ],
+      "isExpanse": false,
+      "id": 94436455492
+    },
+    {
+      "contractor": "sdfds",
+      "invoiceNumber": "fdsf",
+      "description": "sdfsdfds",
+      "dateCreated": "2018-02-06T23:00:00.000Z",
+      "dateSold": "2018-02-14T23:00:00.000Z",
+      "datePayment": "2018-02-09T23:00:00.000Z",
+      "payment_type": "Gotówka",
+      "items": [
+        {
+          "name": "sdf",
+          "quantity": "3",
+          "unit": "kg",
+          "vat": "3",
+          "priceNet": "4"
+        }
+      ],
+      "isExpanse": false,
+      "id": 94436455493
     }
   ],
   "user": {

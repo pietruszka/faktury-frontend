@@ -38,20 +38,22 @@ class CarsMain extends Component {
       }
   }
 
-  deleteCar(e){
-    console.log(e);
+  deleteCar(register_number){
+    console.log(register_number);
+    const arr = this.props.user.vehicle.filter(v => v.register_number !== register_number);
+    console.log(arr);
   }
 
 
-  renderVehicles = (vehicle, i) => {
+  renderVehicles = ({ register_number, name, type, owner }, i) => {
 
     return(
-      <TableRow key={vehicle.register_number}>
-        <TableRowColumn>{vehicle.name}</TableRowColumn>
-        <TableRowColumn>{vehicle.register_number}</TableRowColumn>
-        <TableRowColumn>{vehicle.type}</TableRowColumn>
-        <TableRowColumn>{vehicle.owner}</TableRowColumn>
-        <TableRowColumn><RaisedButton onClick={this.deleteCar} label="Usuń" secondary={true} /></TableRowColumn>
+      <TableRow key={register_number}>
+        <TableRowColumn>{name}</TableRowColumn>
+        <TableRowColumn>{register_number}</TableRowColumn>
+        <TableRowColumn>{type}</TableRowColumn>
+        <TableRowColumn>{owner}</TableRowColumn>
+        <TableRowColumn><RaisedButton onClick={() => this.deleteCar(register_number)} label="Usuń" secondary={true} /></TableRowColumn>
       </TableRow>
     );
   }
@@ -68,7 +70,7 @@ class CarsMain extends Component {
           <Page>
             <AppBar title="Pojazdy" showMenuIconButton={false} zDepth={0} />
 
-            <AddCar />
+            <AddCar user={this.props.user} />
 
             <Table>
               <TableHeader displaySelectAll={false}>

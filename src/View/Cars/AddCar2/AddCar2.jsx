@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import TextField from 'material-ui/TextField';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
@@ -69,16 +69,18 @@ const renderSelectField = ({
   />
 )
 
-function onSubmit(values, props) {
-  console.log(props);
-  addVehicle(values);
-}
+class AddCar2 extends Component {
+  onSubmit = (car) => {
+    const vehicle = [...this.props.user.vehicle, car];
+    const user = { ...this.props.user, vehicle };
+    this.props.addVehicle(user);
+  }
 
-const AddCarForm = props => {
-  console.log(props);
-  const { handleSubmit, pristine, reset, submitting } = props
-  return (
-    <form onSubmit={handleSubmit(onSubmit.bind(this), props)}>
+  render() {
+    const { handleSubmit, pristine, reset, submitting } = this.props;
+
+    return (
+      <form onSubmit={handleSubmit(this.onSubmit)}>
         <Field name="name" component={renderTextField} floatingLabelText="Opis/Nazwa" />
 
         <Field name="register_number" component={renderTextField} floatingLabelText="Numer rejestracyjny" />
@@ -94,17 +96,18 @@ const AddCarForm = props => {
           <MenuItem value="50" primaryText="50%" />
           <MenuItem type="number" value="100" primaryText="100%" />
         </Field>
-      <div>
-        <RaisedButton label="Dodaj" primary={true} type="submit" disabled={pristine || submitting} style={style}/>
-        <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset}/>
-      </div>
-    </form>
-  )
+        <div>
+          <RaisedButton label="Dodaj" primary={true} type="submit" disabled={pristine || submitting} style={style} />
+          <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset} />
+        </div>
+      </form>
+    )
+	}
 }
 
 export default reduxForm({
   form: 'AddCarForm', // a unique identifier for this form
   validate
 })(
-  connect (null,{ addVehicle }) (AddCarForm)
+  connect(null, { addVehicle })(AddCar2)
 );

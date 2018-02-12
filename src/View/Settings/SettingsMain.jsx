@@ -20,45 +20,37 @@ class SettingsMain extends Component {
         adress1: '',
         adress2: '',
         code: '',
-        city: '', 
+        city: '',
       },
       disabledEdit: true,
       showSaveButton: false,
     }
-    
-    this.handleClickEdit = this.handleClickEdit.bind(this);
-    this.handleClickSave = this.handleClickSave.bind(this);
-    this.saveButton = this.saveButton.bind(this);
   }
-    
-  handleClickEdit() {
-    this.setState({disabledEdit: false, showSaveButton: true});
-  }
-    
-  handleClickSave() {
-    this.setState({showSaveButton: false, disabledEdit: true});
-  }
-    
-  saveButton() {
-    return(<Button label="ZAPISZ" secondary={true} onClick={this.handleClickSave} />);
-  }
-    
+
+  handleClickEdit = () => this.setState({ disabledEdit: false, showSaveButton: true });
+
+  handleClickSave = () => this.setState({ showSaveButton: false, disabledEdit: true });
+
+  saveButton = () => <Button label="ZAPISZ" secondary={true} onClick={this.handleClickSave} />;
+
   render() {
+    const { disabledEdit, showSaveButton } = this.state;
+
     return(
       <div>
         <Container zDepth={1}>
           <Page>
             <AppBar title="Ustawienia" showMenuIconButton={false} zDepth={0} /> <br/>
-            <TextField hintText="Nazwa firmy" disabled={this.state.disabledEdit}/> <br/>
-            <TextField hintText="NIP" disabled={this.state.disabledEdit}/> <br/>
-            <TextField hintText="REGON" disabled={this.state.disabledEdit}/> <br/>
-            <TextField hintText="Ulica" disabled={this.state.disabledEdit}/> <br/>
-            <TextField hintText="Numer budynku" disabled={this.state.disabledEdit}/> <br/>
-            <TextField hintText="Numer lokalu" disabled={this.state.disabledEdit}/> <br/>
-            <TextField hintText="Kod pocztowy" disabled={this.state.disabledEdit}/> <br/>
-            <TextField hintText="Miasto" disabled={this.state.disabledEdit}/> <br/>
+            <TextField hintText="Nazwa firmy" disabled={disabledEdit}/> <br/>
+            <TextField hintText="NIP" disabled={disabledEdit}/> <br/>
+            <TextField hintText="REGON" disabled={disabledEdit}/> <br/>
+            <TextField hintText="Ulica" disabled={disabledEdit}/> <br/>
+            <TextField hintText="Numer budynku" disabled={disabledEdit}/> <br/>
+            <TextField hintText="Numer lokalu" disabled={disabledEdit}/> <br/>
+            <TextField hintText="Kod pocztowy" disabled={disabledEdit}/> <br/>
+            <TextField hintText="Miasto" disabled={disabledEdit}/> <br/>
             <Button label="EDYTUJ" primary={true} onClick={this.handleClickEdit} />
-            { this.state.showSaveButton ? this.saveButton() : null }
+            { showSaveButton && this.saveButton() }
           </Page>
         </Container>
       </div>

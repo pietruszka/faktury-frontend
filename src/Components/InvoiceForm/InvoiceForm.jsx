@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import { Field, FieldArray, reduxForm } from 'redux-form'
 import validate from './validate'
 import SelectField from 'material-ui/SelectField'
@@ -98,64 +98,65 @@ const renderItems = ({ fields, meta: { error, submitFailed } }) => (
   </Fragment>
 )
 
-const onSubmit = (values) => {
-  console.log(values);
-   addInvoice(values);
-}
+class InvoiceForm extends Component {
+  componentWillMount() {
+    const { invoice } = this.props.match.params;
 
-const InvoiceForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+    (['revenue', 'expanse'].includes(invoice))
+      ? this.isExpanse = invoice === 'expanse'
+      : this.props.history.push('/invoices');
+  }
 
+  onSubmit = (values) => {
+    values.isExpanse = this.isExpanse;
+    console.log(values);
+    addInvoice(values);
+  }
 
-    // if (props.location.pathname == '/add/revenue') {
-    //    isExpanse = false;
-    // } else if (props.location.pathname == '/add/expanse') {
-    //    isExpanse = true;
-    // } else {
-    //   props.history.push('/invoices');
-    // }
+  render() {
+    const { handleSubmit, pristine, reset, submitting } = this.props;
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit.bind(this))}>
-      <FormContainer>
-        <FormElement>
-          {/* <Field name="isExpanse" value={this.isExpanse} component='input' type='checkbox'/> */}
-          <Field name="contractor" component={renderTextField} floatingLabelText="Kontrahent" />
+    return (
+      <form onSubmit={handleSubmit(this.onSubmit)}>
+        <FormContainer>
+          <FormElement>
+            <Field name="contractor" component={renderTextField} floatingLabelText="Kontrahent" />
 
-          <Field name="invoiceNumber" component={renderTextField} floatingLabelText="Numer Faktury" />
+            <Field name="invoiceNumber" component={renderTextField} floatingLabelText="Numer Faktury" />
 
-          <Field name="description" component={renderTextField} floatingLabelText="Opis" multiLine={true} rows={2} />
-        </FormElement>
-
-
-        <FormElement>
-          <Field name="dateCreated" component={renderDatePicker} label="Data Wystawienia" />
-
-          <Field name="dateSold" component={renderDatePicker} label="Data Sprzedaży" />
-        </FormElement>
-
-        <FormElement>
-          <Field name="datePayment" component={renderDatePicker} label="Termin Płatności" />
-
-          <Field name="payment_type" component={renderSelectField} floatingLabelText="Forma Płatności" >
-            <MenuItem value="Gotówka" primaryText="Gotówka" />
-            <MenuItem value="Przelew" primaryText="Przelew" />
-          </Field>
-        </FormElement>
-
-      </FormContainer>
-
-      <ItemContainer>
-        <FieldArray name="items" component={renderItems} />
-      </ItemContainer>
+            <Field name="description" component={renderTextField} floatingLabelText="Opis" multiLine={true} rows={2} />
+          </FormElement>
 
 
-      <FormContainer>
-        <RaisedButton label="Dodaj" primary={true} type="submit" disabled={pristine || submitting} style={style}/>
-        <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset}/>
-      </FormContainer>
-    </form>
-  )
+          <FormElement>
+            <Field name="dateCreated" component={renderDatePicker} label="Data Wystawienia" />
+
+            <Field name="dateSold" component={renderDatePicker} label="Data Sprzedaży" />
+          </FormElement>
+
+          <FormElement>
+            <Field name="datePayment" component={renderDatePicker} label="Termin Płatności" />
+
+            <Field name="payment_type" component={renderSelectField} floatingLabelText="Forma Płatności" >
+              <MenuItem value="Gotówka" primaryText="Gotówka" />
+              <MenuItem value="Przelew" primaryText="Przelew" />
+            </Field>
+          </FormElement>
+
+        </FormContainer>
+
+        <ItemContainer>
+          <FieldArray name="items" component={renderItems} />
+        </ItemContainer>
+
+
+        <FormContainer>
+          <RaisedButton label="Dodaj" primary={true} type="submit" disabled={pristine || submitting} style={style} />
+          <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset} />
+        </FormContainer>
+      </form>
+    )
+	}
 }
 
 export default reduxForm({

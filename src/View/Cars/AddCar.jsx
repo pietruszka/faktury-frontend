@@ -57,7 +57,7 @@ export class AddCar extends Component {
       <div style={style}>
         <Button label="DODAJ POJAZD" primary={true} onClick={this.handleOpen} />
         <Dialog title="Dodaj nowy pojazd" actions={actions} modal={true} open={this.state.open} autoScrollBodyContent={true}>
-          <AddCarForm />
+          <AddCarForm user={this.props.user} />
         </Dialog>
       </div>
     );
