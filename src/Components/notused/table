@@ -1,0 +1,28 @@
+<Table>
+  <TableHeader displaySelectAll={false}>
+    <TableRow>
+      <TableHeaderColumn>Nazwa</TableHeaderColumn>
+      <TableHeaderColumn>Cena</TableHeaderColumn>
+      <TableHeaderColumn>Ilość</TableHeaderColumn>
+      <TableHeaderColumn>j.m.</TableHeaderColumn>
+      <TableHeaderColumn>Netto</TableHeaderColumn>
+      <TableHeaderColumn>Stawka VAT</TableHeaderColumn>
+      <TableHeaderColumn>Wartość VAT</TableHeaderColumn>
+      <TableHeaderColumn>Brutto</TableHeaderColumn>
+      <TableHeaderColumn><Button label="EDYTUJ" primary={true} onClick={this.handleClickEdit}></Button></TableHeaderColumn>
+    </TableRow>
+  </TableHeader>
+  <TableBody displayRowCheckbox={false} >
+    <TableRow>
+      <TableRowColumn>Krzesło</TableRowColumn>
+      <TableRowColumn>100,00</TableRowColumn>
+      <TableRowColumn>1</TableRowColumn>
+      <TableRowColumn>szt.</TableRowColumn>
+      <TableRowColumn>100,00</TableRowColumn>
+      <TableRowColumn>23%</TableRowColumn>
+      <TableRowColumn>23</TableRowColumn>
+      <TableRowColumn>123</TableRowColumn>
+      <TableRowColumn>{ this.state.allowEdit ? this.editIcon() : null }</TableRowColumn>
+    </TableRow>
+  </TableBody>
+</Table>

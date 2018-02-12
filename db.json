@@ -1,252 +1,295 @@
 {
-  "faktury":[
-      {
-       "id": 24436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-      "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 34436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 44436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 54436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1355,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 101351350,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 64436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1531,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 654,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 74436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 4041,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1245,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 84436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 1000,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      },
-      {
-       "id": 94436455475,
-       "dateCreated": "325423534534",
-       "dateSold": "3254233463464",
-       "datePayment": "325443464534",
-       "payment_type": "gotówka",
-       "invoiceNumber": "DJS5644",
-       "contractor": "Efg Sp. Z.o.o",
-       "description": "Zakup 3, sklepy",
-       "items": [
-          {
-            "name": "Sprzęt biurowy",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 20,
-            "vat": 23
-          },
-          {
-            "name": "Lampa",
-            "quantity": 1,
-            "unit": "szt",
-            "net": 100,
-            "vat": 23
-          }
-        ],
-        "file": "/invoice/2342343546.pdf"
-      }
-],
-   "user": {
-     "id": 24436455475,
-     "company_name": "Abc",
-     "nip": 3454354,
-     "regon": 5325435,
-     "street": "Główna",
-     "building_number": "14",
-     "flat_number": "c",
-     "postal_code": "55-353",
-     "city": "Wrocław",
-     "vehicle": [
+  "faktury": [
+    {
+      "contractor": "JAn Paweł 2",
+      "invoiceNumber": "2137",
+      "dateCreated": "2018-02-12T00:38:35.075Z",
+      "dateSold": "2018-02-12T00:38:37.220Z",
+      "datePayment": "2018-02-12T00:38:38.870Z",
+      "payment_type": "Przelew",
+      "description": "obbbobob",
+      "items": [
         {
+          "name": "jebał",
+          "vat": "23",
+          "quantity": "1",
+          "priceNet": "12141",
+          "unit": "szt"
+        }
+      ],
+      "id": 94436455476
+    },
+    {
+      "contractor": "JAn Paweł 2",
+      "invoiceNumber": "2137",
+      "dateCreated": "2018-02-12T00:38:35.075Z",
+      "dateSold": "2018-02-12T00:38:37.220Z",
+      "datePayment": "2018-02-12T00:38:38.870Z",
+      "payment_type": "Przelew",
+      "description": "obbbobob",
+      "items": [
+        {
+          "name": "jebał",
+          "vat": "23",
+          "quantity": "1",
+          "priceNet": "12141",
+          "unit": "szt"
+        }
+      ],
+      "id": 94436455477
+    },
+    {
+      "contractor": "Dziad Borowy",
+      "invoiceNumber": "1241241",
+      "dateCreated": "2018-02-21T23:00:00.000Z",
+      "dateSold": "2018-01-31T23:00:00.000Z",
+      "datePayment": "2018-01-31T23:00:00.000Z",
+      "payment_type": "Przelew",
+      "description": "1241421",
+      "items": [
+        {
+          "name": "Kibel",
+          "vat": "23",
+          "priceNet": "100",
+          "quantity": "2",
+          "unit": "szt"
+        },
+        {
+          "name": "okno",
+          "vat": "23",
+          "priceNet": "200",
+          "quantity": "2",
+          "unit": "szt"
+        }
+      ],
+      "id": 94436455478
+    },
+    {
+      "contractor": "aef",
+      "invoiceNumber": "124124",
+      "dateCreated": "2018-02-12T01:00:44.175Z",
+      "dateSold": "2018-02-12T01:00:45.539Z",
+      "datePayment": "2018-02-12T01:00:46.945Z",
+      "payment_type": "Przelew",
+      "description": "qfqegq",
+      "items": [
+        {
+          "name": "afwf",
+          "vat": "23",
+          "priceNet": "100",
+          "quantity": "2",
+          "unit": "szt"
+        },
+        {
+          "vat": "23",
+          "priceNet": "300",
+          "name": "wffww",
+          "quantity": "3",
+          "unit": "szt"
+        }
+      ],
+      "id": 94436455479
+    },
+    {
+      "contractor": "aef",
+      "invoiceNumber": "124124",
+      "dateCreated": "2018-02-12T01:00:44.175Z",
+      "dateSold": "2018-02-12T01:00:45.539Z",
+      "datePayment": "2018-02-12T01:00:46.945Z",
+      "payment_type": "Przelew",
+      "description": "qfqegq",
+      "items": [
+        {
+          "name": "afwf",
+          "vat": "23",
+          "priceNet": "100",
+          "quantity": "2",
+          "unit": "szt"
+        },
+        {
+          "vat": "23",
+          "priceNet": "300",
+          "name": "wffww",
+          "quantity": "3",
+          "unit": "szt"
+        }
+      ],
+      "id": 94436455480
+    },
+    {
+      "contractor": "Jan",
+      "invoiceNumber": "1214124",
+      "dateCreated": "2018-02-12T01:17:51.099Z",
+      "dateSold": "2018-02-12T01:17:52.258Z",
+      "datePayment": "2018-02-12T01:17:53.408Z",
+      "payment_type": "Przelew",
+      "description": "kjbkjbb",
+      "items": [
+        {
+          "name": "kij",
+          "vat": "23",
+          "quantity": "3",
+          "priceNet": "21",
+          "unit": "szt"
+        },
+        {
+          "name": "tak",
+          "vat": "23",
+          "quantity": "5",
+          "priceNet": "100",
+          "unit": "szt"
+        }
+      ],
+      "id": 94436455481
+    },
+    {
+      "dateSold": "2018-02-13T23:00:00.000Z",
+      "items": [
+        {
+          "name": "wf",
+          "quantity": "1",
+          "vat": "23",
+          "priceNet": "123",
+          "unit": "szt"
+        }
+      ],
+      "contractor": "wfw",
+      "dateCreated": "2018-02-12T01:25:03.643Z",
+      "datePayment": "2018-02-12T01:25:04.866Z",
+      "payment_type": "Gotówka",
+      "invoiceNumber": "1242141",
+      "description": "efef",
+      "id": 94436455482
+    },
+    {
+      "items": [
+        {
+          "name": "ege",
+          "vat": "23",
+          "priceNet": "342",
+          "quantity": "5",
+          "unit": "szt"
+        }
+      ],
+      "contractor": "efaf",
+      "invoiceNumber": "12524",
+      "description": "rsgfvrs",
+      "dateCreated": "2018-02-12T01:25:47.190Z",
+      "dateSold": "2018-02-12T01:25:48.483Z",
+      "datePayment": "2018-02-12T01:25:49.756Z",
+      "payment_type": "Przelew",
+      "id": 94436455483
+    },
+    {
+      "contractor": "asffasf",
+      "invoiceNumber": "124412421",
+      "dateCreated": "2018-02-12T02:40:49.477Z",
+      "dateSold": "2018-02-12T02:40:50.682Z",
+      "datePayment": "2018-02-12T02:40:52.358Z",
+      "payment_type": "Przelew",
+      "description": "efafa",
+      "items": [
+        {
+          "name": "wqfaf",
+          "vat": "23",
+          "quantity": "5",
+          "unit": "szt",
+          "priceNet": "123"
+        }
+      ],
+      "id": 94436455484
+    },
+    {
+      "contractor": "babież",
+      "invoiceNumber": "12412",
+      "dateCreated": "2018-02-21T23:00:00.000Z",
+      "datePayment": "2018-02-12T02:42:26.982Z",
+      "payment_type": "Przelew",
+      "dateSold": "2018-02-12T02:42:30.674Z",
+      "description": "adsdas",
+      "items": [
+        {
+          "name": "ads",
+          "vat": "23",
+          "quantity": "6",
+          "priceNet": "999",
+          "unit": "kg"
+        }
+      ],
+      "id": 94436455485
+    },
+    {
+      "contractor": "babież",
+      "invoiceNumber": "12412",
+      "dateCreated": "2018-02-21T23:00:00.000Z",
+      "datePayment": "2018-02-12T02:42:26.982Z",
+      "payment_type": "Przelew",
+      "dateSold": "2018-02-12T02:42:30.674Z",
+      "description": "adsdas",
+      "items": [
+        {
+          "name": "ads",
+          "vat": "23",
+          "quantity": "6",
+          "priceNet": "999",
+          "unit": "kg"
+        }
+      ],
+      "id": 94436455486
+    },
+    {
+      "contractor": "babież",
+      "invoiceNumber": "12412",
+      "dateCreated": "2018-02-21T23:00:00.000Z",
+      "datePayment": "2018-02-12T02:42:26.982Z",
+      "payment_type": "Przelew",
+      "dateSold": "2018-02-12T02:42:30.674Z",
+      "description": "adsdas",
+      "items": [
+        {
+          "name": "ads",
+          "vat": "23",
+          "quantity": "6",
+          "priceNet": "999",
+          "unit": "kg"
+        }
+      ],
+      "id": 94436455487
+    }
+  ],
+  "user": {
+    "id": 24436455475,
+    "company_name": "Abc",
+    "nip": 3454354,
+    "regon": 5325435,
+    "street": "Główna",
+    "building_number": "14",
+    "flat_number": "c",
+    "postal_code": "55-353",
+    "city": "Wrocław",
+    "vehicle": [
+      {
         "name": "Opel",
         "register_number": "dwa 3545",
         "type": "dostawczy",
         "owner": "leasing",
         "volume": 1400,
         "deducted_costs": 50
-        },
-        {
+      },
+      {
         "name": "Volvo",
         "register_number": "ds 34423",
         "type": "osobowy",
         "owner": "kredyt",
         "volume": 1400,
         "deducted_costs": 100
-        }
-     ],
-     "invoice": ["23452345345", "43345345345", "4234234"],
-     "activate": true
+      }
+    ],
+    "invoice": [
+      "23452345345",
+      "43345345345",
+      "4234234"
+    ],
+    "activate": true
   }
-
 }

@@ -16,7 +16,8 @@ import { MainBar, MenuButton} from './Home_style'
 import InvoicesMain from './Invoices/InvoicesMain';
 import CarsMain from './Cars/CarsMain';
 import SettingsMain from './Settings/SettingsMain';
-import Forms from './Login:Register/Forms';
+import Forms from './Login_Register/Forms';
+import InvoiceForm from './../Components/InvoiceForm/InvoiceForm';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -43,10 +44,10 @@ export default class Home extends React.Component {
               <Route path='/invoices' component={InvoicesMain} />
               <Route path='/cars' component={CarsMain} />
               <Route path='/settings' component={SettingsMain} />
+              <Route path='/add/:invoice' component={InvoiceForm} />
             <Forms />
-        </div> 
+        </div>
       </Router>
     )
   }
 }
-

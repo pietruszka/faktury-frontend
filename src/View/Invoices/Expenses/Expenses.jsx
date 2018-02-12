@@ -12,6 +12,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { fetchInvoices } from './../../../Actions/Index';
 import DeleteDialog from './../../../Components/DeleteDialog';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Expenses extends Component {
   componentDidMount() {
@@ -19,12 +20,15 @@ class Expenses extends Component {
   }
 
   renderTable = (invoice, i) => {
+    if(!invoice.items) {
+      return null;
+    }
     const netto = invoice.items.map((item)=>{
-      return item.net
+      return item.priceNet * item.quantity
     });
 
     const brutto = invoice.items.map((item)=>{
-      return item.net + item.vat
+      return item.priceNet * item.quantity * (1 + (item.vat/100))
     });
 
     const add = (a, b) => a + b;
@@ -52,7 +56,7 @@ class Expenses extends Component {
     }
       return(
         <Fragment>
-          <StyledRaisedButton label="Dodaj Wydatek" primary={true} />
+          <Link to='/add/expanse'><RaisedButton label="Dodaj Fakturę" primary={true} /></Link>
           <Table>
             <TableHeader displaySelectAll={false}>
               <TableRow>

@@ -4,8 +4,9 @@ import React, { Component } from 'react';
 // Material UI
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
-import AddCarForm from './AddCar2/AddCar2';
+
+import AddForm from './AddForm';
+
 import MenuItem from 'material-ui/MenuItem';
 import {
   Table,
@@ -17,10 +18,10 @@ import {
 } from 'material-ui/Table';
 
 // Styled Components
-import { Button, AddButton, Form, InputsContainer, TextInput, Date, ComboBox, Text } from './AddCar_style';
+import { Button, Form, InputsContainer, TextInput, Date, ComboBox } from './../View/Invoices/Revenues/Revenues_style';
 
 
-export class AddCar extends Component {
+class AddInvoiceComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,16 +51,20 @@ export class AddCar extends Component {
     ];
 
     const style = {
-        width: '500px',
+        display: 'inline',
     };
 
     return (
       <div style={style}>
-        <Button label="DODAJ POJAZD" primary={true} onClick={this.handleOpen} />
-        <Dialog title="Dodaj nowy pojazd" actions={actions} modal={true} open={this.state.open} autoScrollBodyContent={true}>
-          <AddCarForm />
+        <Button label="WYSTAW NOWĄ FAKTURĘ" primary={true} onClick={this.handleOpen} />
+        <Dialog title="Dodaj nową fakturę" actions={actions} modal={true} open={this.state.open} autoScrollBodyContent={true}>
+          <AddForm />
         </Dialog>
       </div>
     );
   }
 }
+
+
+
+export default AddInvoiceComp;
