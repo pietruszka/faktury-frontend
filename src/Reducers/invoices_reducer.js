@@ -6,8 +6,8 @@ export default function(state=[], action) {
     case FETCH_INVOICES:
       // return _.mapKeys(action.payload.data, 'id')
       return action.payload.data;
-      case DELETE_INVOICE:
-        return _.omit(state, action.payload);
+    case DELETE_INVOICE:
+      return _.omit(state, action.payload);
     default:
       return state;
   }

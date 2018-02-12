@@ -3,6 +3,8 @@ import axios from 'axios';
 export const FETCH_INVOICES = 'FETCH_INVOICES';
 export const DELETE_INVOICE = 'DELETE_INVOICE';
 export const ADD_INVOICE = 'ADD_INVOICE';
+export const FETCH_USER = 'FETCH_USER';
+export const ADD_VEHICLE ='ADD_VEHICLE';
 
 export function fetchInvoices() {
   const request = axios.get("http://localhost:3004/faktury");
@@ -28,5 +30,21 @@ export function addInvoice(invoice, cb) {
   return {
     type: ADD_INVOICE,
     payload: request
+  }
+}
+
+export function fetchUser(id){
+  const request = axios.get(`http://localhost:3004/user?id=${id}`);
+  return {
+    type: FETCH_USER,
+    payload: request
+  }
+}
+
+export function addVehicle(vehicle) {
+  console.log(vehicle);
+  return {
+    type: ADD_VEHICLE,
+    payload: null
   }
 }
