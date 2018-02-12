@@ -10,30 +10,34 @@ export const ContentContainer = styled.div`
 `;
 
 export const Button = styled(RaisedButton)`
-  margin: 10px;
+  margin: 20px;
   display: inline;
+`;
+
+export const AddButton = styled(RaisedButton)`
+  margin-top: 15px;
+
 `;
 
 export const Form = styled.form`
   margin-top: 10px;
-  height: 500px;
-  text-align: center;
 `;
 
 export const InputsContainer = styled.div`
-  
+  margin-left: 100px;
 `;
 
 export const TextInput = styled(TextField)`
   display: block;
-  margin-left: 20px;
-`
+`;
 
 export const ComboBox = styled(SelectField)`
   display: block;
-  margin-left: 20px;
 `;
 
+export const Text = styled.p`
+  margin: 15px 0;
+`;
 
 
 

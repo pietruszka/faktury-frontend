@@ -17,7 +17,7 @@ import {
 } from 'material-ui/Table';
 
 // Styled Components
-import { Button, Form, InputsContainer, TextInput, Date, ComboBox } from './AddCar_style';
+import { Button, AddButton, Form, InputsContainer, TextInput, Date, ComboBox, Text } from './AddCar_style';
 
 
 export class AddCar extends Component {
@@ -41,22 +41,18 @@ export class AddCar extends Component {
 
   render() {
     const actions = [
-      <FlatButton
-        label="Anuluj"
-        primary={true}
-        onClick={this.handleClose}
-      />,
-      
+      <FlatButton label="Anuluj" primary={true} onClick={this.handleClose} />,
+      <AddButton type="submit" label="Dodaj" primary={true} form="my-form-id" />
     ];
     
     const style = {
-        display: 'inline',
+        width: '500px',
     };
 
     return (
-      <div style={style}>
-        <Button label="DODAJ POJAZD" primary={true} onClick={this.handleOpen} />
-        <Dialog title="Dodaj nowy pojazd" actions={actions} modal={true} open={this.state.open} autoScrollBodyContent={true}>
+      <div>
+        <Button label="DODAJ POJAZD" primary={true} onClick={this.handleOpen} main />
+        <Dialog title="Dodaj nowy pojazd" actions={actions} modal={true} open={this.state.open} autoScrollBodyContent={true} contentStyle={style}>
           <AddData />
         </Dialog>
       </div>
@@ -88,28 +84,27 @@ class AddData extends Component {
   render() {
     return(
       <div>
-        <Form>
+        <Form id="my-form-id">
             <InputsContainer>
-              <TextInput floatingLabelText="Opis/Nazwa" /> <br/>
+              <TextInput floatingLabelText="Opis/Nazwa" />
               <TextInput floatingLabelText="Numer rejestracyjny" /> <br/>
               <ComboBox floatingLabelText="Forma posiadania" value={this.state.ownership} onChange={this.handleChangeCombo1}>
                 <MenuItem value={1} primaryText="Leasing" />
                 <MenuItem value={2} primaryText="Własny" />
-              </ComboBox> <br/>
+              </ComboBox> 
               <ComboBox floatingLabelText="Typ" value={this.state.type} onChange={this.handleChangeCombo2}>
                 <MenuItem value={1} primaryText="Osobowy" />
                 <MenuItem value={2} primaryText="Bus" />
                 <MenuItem value={3} primaryText="Ciężarowy" />
               </ComboBox> <br/>
-              <p>% Kosztow do odliczenia</p>
-              <RadioButtonGroup name="Koszty do odlicznia" defaultSelected="0">
+              <Text>% Kosztow do odliczenia</Text>
+              <RadioButtonGroup name="Koszty do odlicznia">
                 <RadioButton value="0" label="0%" />
                 <RadioButton value="50" label="50%" />
                 <RadioButton value="100" label="100%" />
               </RadioButtonGroup>
             </InputsContainer>
-            <Button type="submit" label="Dodaj" primary={true} />
-          </Form>
+        </Form>
       </div>
     );
   }

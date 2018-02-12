@@ -51,17 +51,27 @@ class Data extends Component {
       return(<i class="material-icons">clear</i>);
   }
   render() {
+    const tableStyle = {
+        width: '600px',
+        margin: '0 auto',
+    }
+    // jak wyśrodkować rekordy
+    const headerStyle = {
+        marginLeft: '100px',
+    }
     return(
-      <Table>
+      <Table style={tableStyle} fixedHeader={false}>
         <TableHeader displaySelectAll={false}>
           <TableRow>
+            <TableHeaderColumn>L.p.</TableHeaderColumn>
             <TableHeaderColumn>Nazwa</TableHeaderColumn>
             <TableHeaderColumn>Numer rejestracyjny</TableHeaderColumn>
             <TableHeaderColumn><Button label="EDYTUJ" primary={true} onClick={this.handleClickEdit}></Button></TableHeaderColumn>
           </TableRow>
         </TableHeader>
-        <TableBody displayRowCheckbox={false} >
+        <TableBody displayRowCheckbox={false}>
           <TableRow>
+            <TableRowColumn>1</TableRowColumn>
             <TableRowColumn>Ferrari</TableRowColumn>
             <TableRowColumn>DW 336MJ</TableRowColumn>
             <TableRowColumn>{ this.state.allowEdit ? this.editIcon() : null }</TableRowColumn>
