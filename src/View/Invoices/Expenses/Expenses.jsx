@@ -20,7 +20,7 @@ class Expenses extends Component {
   }
 
   renderTable = (invoice, i) => {
-    if(!invoice.items) {
+    if(!invoice.items || invoice.isExpanse === false) {
       return null;
     }
     const netto = invoice.items.map((item)=>{

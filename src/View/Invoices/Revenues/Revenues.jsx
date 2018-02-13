@@ -28,7 +28,7 @@ class Revenues extends Component {
   }
 
   renderTable = (invoice, i) => {
-    if(!invoice.items) {
+    if(!invoice.items || invoice.isExpanse === true) {
       return null;
     }
     const netto = invoice.items.map((item)=>{

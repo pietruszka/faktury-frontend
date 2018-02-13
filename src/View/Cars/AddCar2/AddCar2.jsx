@@ -6,31 +6,9 @@ import Checkbox from 'material-ui/Checkbox';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
-import { addVehicle } from './../../../Actions/Index';
+import { addVehicle, fetchUser } from './../../../Actions/Index';
 import { connect } from 'react-redux';
-
-const validate = values => {
-  console.log(values);
-  const errors = {}
-  const requiredFields = [
-    'name',
-    'register_number',
-    'owner',
-    'deducted_costs'
-  ]
-  requiredFields.forEach(field => {
-    if (!values[field]) {
-      errors[field] = 'Required'
-    }
-  })
-  if (
-    values.email &&
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-  ) {
-    errors.email = 'Invalid email address'
-  }
-  return errors
-}
+import { validate } from './../validateCar';
 
 const style = {
   margin: 12,
@@ -51,7 +29,6 @@ const renderTextField = ({
   />
 )
 
-
 const renderSelectField = ({
   input,
   label,
@@ -71,9 +48,10 @@ const renderSelectField = ({
 
 class AddCar2 extends Component {
   onSubmit = (car) => {
-    const vehicle = [...this.props.user.vehicle, car];
-    const user = { ...this.props.user, vehicle };
-    this.props.addVehicle(user);
+    const vehicle = [...this.props.user[0].vehicle, car];
+    const user = { ...this.props.user[0], vehicle };
+    const userid = this.props.user[0].id;
+    this.props.addVehicle(user, userid, () => this.props.fetchUser());
   }
 
   render() {
@@ -109,5 +87,5 @@ export default reduxForm({
   form: 'AddCarForm', // a unique identifier for this form
   validate
 })(
-  connect(null, { addVehicle })(AddCar2)
+  connect(null, { addVehicle, fetchUser })(AddCar2)
 );

@@ -20,13 +20,13 @@ import { Container, Page, Button } from './Main_style'
 
 import { AddCar } from './AddCar'
 import { fetchUser } from './../../Actions/Index';
-
+import { getCookie } from './../../cookies';
 
 class CarsMain extends Component {
 
   componentDidMount(){
-    const user = 24436455475;
-    console.log(this.props)
+    const user = getCookie('id');
+    console.log(user);
     this.props.fetchUser(user);
   }
 
@@ -40,7 +40,7 @@ class CarsMain extends Component {
 
   deleteCar(register_number){
     console.log(register_number);
-    const arr = this.props.user.vehicle.filter(v => v.register_number !== register_number);
+    const arr = this.props.user[0].vehicle.filter(v => v.register_number !== register_number);
     console.log(arr);
   }
 
@@ -60,7 +60,7 @@ class CarsMain extends Component {
 
   render() {
     console.log(this.props);
-    if (!this.props.user.vehicle){
+    if (this.props.user.length === 0){
       return <div>Loading...</div>;
     }
     return(
@@ -83,7 +83,7 @@ class CarsMain extends Component {
                 </TableRow>
               </TableHeader>
               <TableBody displayRowCheckbox={false} >
-                {this.props.user.vehicle.map(this.renderVehicles)}
+                {this.props.user[0].vehicle.map(this.renderVehicles)}
               </TableBody>
             </Table>
           </Page>

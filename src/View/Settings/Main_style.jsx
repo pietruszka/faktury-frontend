@@ -9,7 +9,7 @@ export const Button = styled(RaisedButton)`
 
 export const Container = styled.div`
     width: 90%;
-    height: 550px;
+    height: 750px;
     margin: 20px auto;
 `;
 
@@ -18,4 +18,3 @@ export const Page = styled(Paper)`
  height: 100%;
  text-align: center;
 `;
-

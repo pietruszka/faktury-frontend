@@ -16,8 +16,11 @@ import { MainBar, MenuButton} from './Home_style'
 import InvoicesMain from './Invoices/InvoicesMain';
 import CarsMain from './Cars/CarsMain';
 import SettingsMain from './Settings/SettingsMain';
+import SettingsMain1 from './Settings/SettingsMain1';
 import Forms from './Login_Register/Forms';
 import InvoiceForm from './../Components/InvoiceForm/InvoiceForm';
+
+import { deleteCookie } from './../cookies';
 
 export default class Home extends React.Component {
   constructor(props) {

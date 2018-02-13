@@ -1,415 +1,188 @@
 {
   "faktury": [
     {
-      "contractor": "JAn Paweł 2",
-      "invoiceNumber": "2137",
-      "dateCreated": "2018-02-12T00:38:35.075Z",
-      "dateSold": "2018-02-12T00:38:37.220Z",
-      "datePayment": "2018-02-12T00:38:38.870Z",
-      "payment_type": "Przelew",
-      "description": "obbbobob",
-      "items": [
-        {
-          "name": "jebał",
-          "vat": "23",
-          "quantity": "1",
-          "priceNet": "12141",
-          "unit": "szt"
-        }
-      ],
-      "id": 94436455476
-    },
-    {
-      "contractor": "JAn Paweł 2",
-      "invoiceNumber": "2137",
-      "dateCreated": "2018-02-12T00:38:35.075Z",
-      "dateSold": "2018-02-12T00:38:37.220Z",
-      "datePayment": "2018-02-12T00:38:38.870Z",
-      "payment_type": "Przelew",
-      "description": "obbbobob",
-      "items": [
-        {
-          "name": "jebał",
-          "vat": "23",
-          "quantity": "1",
-          "priceNet": "12141",
-          "unit": "szt"
-        }
-      ],
-      "id": 94436455477
-    },
-    {
-      "contractor": "Dziad Borowy",
-      "invoiceNumber": "1241241",
-      "dateCreated": "2018-02-21T23:00:00.000Z",
-      "dateSold": "2018-01-31T23:00:00.000Z",
-      "datePayment": "2018-01-31T23:00:00.000Z",
-      "payment_type": "Przelew",
-      "description": "1241421",
-      "items": [
-        {
-          "name": "Kibel",
-          "vat": "23",
-          "priceNet": "100",
-          "quantity": "2",
-          "unit": "szt"
-        },
-        {
-          "name": "okno",
-          "vat": "23",
-          "priceNet": "200",
-          "quantity": "2",
-          "unit": "szt"
-        }
-      ],
-      "id": 94436455478
-    },
-    {
-      "contractor": "aef",
-      "invoiceNumber": "124124",
-      "dateCreated": "2018-02-12T01:00:44.175Z",
-      "dateSold": "2018-02-12T01:00:45.539Z",
-      "datePayment": "2018-02-12T01:00:46.945Z",
-      "payment_type": "Przelew",
-      "description": "qfqegq",
-      "items": [
-        {
-          "name": "afwf",
-          "vat": "23",
-          "priceNet": "100",
-          "quantity": "2",
-          "unit": "szt"
-        },
-        {
-          "vat": "23",
-          "priceNet": "300",
-          "name": "wffww",
-          "quantity": "3",
-          "unit": "szt"
-        }
-      ],
-      "id": 94436455479
-    },
-    {
-      "contractor": "aef",
-      "invoiceNumber": "124124",
-      "dateCreated": "2018-02-12T01:00:44.175Z",
-      "dateSold": "2018-02-12T01:00:45.539Z",
-      "datePayment": "2018-02-12T01:00:46.945Z",
-      "payment_type": "Przelew",
-      "description": "qfqegq",
-      "items": [
-        {
-          "name": "afwf",
-          "vat": "23",
-          "priceNet": "100",
-          "quantity": "2",
-          "unit": "szt"
-        },
-        {
-          "vat": "23",
-          "priceNet": "300",
-          "name": "wffww",
-          "quantity": "3",
-          "unit": "szt"
-        }
-      ],
-      "id": 94436455480
-    },
-    {
       "contractor": "Jan",
-      "invoiceNumber": "1214124",
-      "dateCreated": "2018-02-12T01:17:51.099Z",
-      "dateSold": "2018-02-12T01:17:52.258Z",
-      "datePayment": "2018-02-12T01:17:53.408Z",
+      "invoiceNumber": "Paweł",
+      "date": {
+        "dateCreated": "2018-02-13T07:40:23.685Z",
+        "dateSold": "2018-02-13T07:40:26.220Z",
+        "datePayment": "2018-02-13T07:40:28.567Z"
+      },
       "payment_type": "Przelew",
-      "description": "kjbkjbb",
+      "description": "wdaw",
       "items": [
         {
-          "name": "kij",
+          "name": "adw",
           "vat": "23",
-          "quantity": "3",
-          "priceNet": "21",
-          "unit": "szt"
-        },
-        {
-          "name": "tak",
-          "vat": "23",
-          "quantity": "5",
-          "priceNet": "100",
-          "unit": "szt"
-        }
-      ],
-      "id": 94436455481
-    },
-    {
-      "dateSold": "2018-02-13T23:00:00.000Z",
-      "items": [
-        {
-          "name": "wf",
-          "quantity": "1",
-          "vat": "23",
-          "priceNet": "123",
-          "unit": "szt"
-        }
-      ],
-      "contractor": "wfw",
-      "dateCreated": "2018-02-12T01:25:03.643Z",
-      "datePayment": "2018-02-12T01:25:04.866Z",
-      "payment_type": "Gotówka",
-      "invoiceNumber": "1242141",
-      "description": "efef",
-      "id": 94436455482
-    },
-    {
-      "items": [
-        {
-          "name": "ege",
-          "vat": "23",
-          "priceNet": "342",
-          "quantity": "5",
-          "unit": "szt"
-        }
-      ],
-      "contractor": "efaf",
-      "invoiceNumber": "12524",
-      "description": "rsgfvrs",
-      "dateCreated": "2018-02-12T01:25:47.190Z",
-      "dateSold": "2018-02-12T01:25:48.483Z",
-      "datePayment": "2018-02-12T01:25:49.756Z",
-      "payment_type": "Przelew",
-      "id": 94436455483
-    },
-    {
-      "contractor": "asffasf",
-      "invoiceNumber": "124412421",
-      "dateCreated": "2018-02-12T02:40:49.477Z",
-      "dateSold": "2018-02-12T02:40:50.682Z",
-      "datePayment": "2018-02-12T02:40:52.358Z",
-      "payment_type": "Przelew",
-      "description": "efafa",
-      "items": [
-        {
-          "name": "wqfaf",
-          "vat": "23",
-          "quantity": "5",
-          "unit": "szt",
-          "priceNet": "123"
-        }
-      ],
-      "id": 94436455484
-    },
-    {
-      "contractor": "babież",
-      "invoiceNumber": "12412",
-      "dateCreated": "2018-02-21T23:00:00.000Z",
-      "datePayment": "2018-02-12T02:42:26.982Z",
-      "payment_type": "Przelew",
-      "dateSold": "2018-02-12T02:42:30.674Z",
-      "description": "adsdas",
-      "items": [
-        {
-          "name": "ads",
-          "vat": "23",
-          "quantity": "6",
-          "priceNet": "999",
-          "unit": "kg"
-        }
-      ],
-      "id": 94436455485
-    },
-    {
-      "contractor": "babież",
-      "invoiceNumber": "12412",
-      "dateCreated": "2018-02-21T23:00:00.000Z",
-      "datePayment": "2018-02-12T02:42:26.982Z",
-      "payment_type": "Przelew",
-      "dateSold": "2018-02-12T02:42:30.674Z",
-      "description": "adsdas",
-      "items": [
-        {
-          "name": "ads",
-          "vat": "23",
-          "quantity": "6",
-          "priceNet": "999",
-          "unit": "kg"
-        }
-      ],
-      "id": 94436455486
-    },
-    {
-      "contractor": "babież",
-      "invoiceNumber": "12412",
-      "dateCreated": "2018-02-21T23:00:00.000Z",
-      "datePayment": "2018-02-12T02:42:26.982Z",
-      "payment_type": "Przelew",
-      "dateSold": "2018-02-12T02:42:30.674Z",
-      "description": "adsdas",
-      "items": [
-        {
-          "name": "ads",
-          "vat": "23",
-          "quantity": "6",
-          "priceNet": "999",
-          "unit": "kg"
-        }
-      ],
-      "id": 94436455487
-    },
-    {
-      "contractor": "jghj",
-      "invoiceNumber": "fghj",
-      "description": "ghj",
-      "isExpanse": true,
-      "dateCreated": "2018-02-06T23:00:00.000Z",
-      "dateSold": "2018-02-15T23:00:00.000Z",
-      "datePayment": "2018-02-22T23:00:00.000Z",
-      "payment_type": "Gotówka",
-      "items": [
-        {
-          "name": "gdfg",
           "quantity": "2",
-          "unit": "szt",
-          "priceNet": "34",
-          "vat": "3"
-        }
-      ],
-      "id": 94436455488
-    },
-    {
-      "contractor": "jghj",
-      "invoiceNumber": "fghj",
-      "description": "ghj",
-      "isExpanse": true,
-      "dateCreated": "2018-02-06T23:00:00.000Z",
-      "dateSold": "2018-02-15T23:00:00.000Z",
-      "datePayment": "2018-02-22T23:00:00.000Z",
-      "payment_type": "Gotówka",
-      "items": [
-        {
-          "name": "gdfg",
-          "quantity": "2",
-          "unit": "szt",
-          "priceNet": "34",
-          "vat": "3"
-        }
-      ],
-      "id": 94436455489
-    },
-    {
-      "contractor": "jghj",
-      "invoiceNumber": "fghj",
-      "description": "ghj",
-      "isExpanse": true,
-      "dateCreated": "2018-02-06T23:00:00.000Z",
-      "dateSold": "2018-02-15T23:00:00.000Z",
-      "datePayment": "2018-02-22T23:00:00.000Z",
-      "payment_type": "Gotówka",
-      "items": [
-        {
-          "name": "gdfg",
-          "quantity": "2",
-          "unit": "szt",
-          "priceNet": "34",
-          "vat": "3"
-        }
-      ],
-      "id": 94436455490
-    },
-    {
-      "contractor": "sdfds",
-      "invoiceNumber": "fdsf",
-      "description": "sdfsdfds",
-      "dateCreated": "2018-02-06T23:00:00.000Z",
-      "dateSold": "2018-02-14T23:00:00.000Z",
-      "datePayment": "2018-02-09T23:00:00.000Z",
-      "payment_type": "Gotówka",
-      "items": [
-        {
-          "name": "sdf",
-          "quantity": "3",
-          "unit": "kg",
-          "vat": "3",
-          "priceNet": "4"
+          "priceNet": "500",
+          "unit": "szt"
         }
       ],
       "isExpanse": false,
-      "id": 94436455491
+      "id": 94436455494
     },
     {
-      "contractor": "sdfds",
-      "invoiceNumber": "fdsf",
-      "description": "sdfsdfds",
-      "dateCreated": "2018-02-06T23:00:00.000Z",
-      "dateSold": "2018-02-14T23:00:00.000Z",
-      "datePayment": "2018-02-09T23:00:00.000Z",
-      "payment_type": "Gotówka",
+      "contractor": "Przychód",
+      "invoiceNumber": "124124121",
+      "date": {
+        "dateCreated": "2018-02-13T07:45:16.076Z",
+        "dateSold": "2018-02-13T07:45:18.412Z",
+        "datePayment": "2018-02-13T07:45:19.537Z"
+      },
+      "payment_type": "Przelew",
+      "description": "wdadwd",
       "items": [
         {
-          "name": "sdf",
-          "quantity": "3",
+          "name": "graty",
+          "quantity": "10",
           "unit": "kg",
-          "vat": "3",
-          "priceNet": "4"
+          "vat": "23",
+          "priceNet": "500"
         }
       ],
       "isExpanse": false,
-      "id": 94436455492
+      "id": 94436455495
     },
     {
-      "contractor": "sdfds",
-      "invoiceNumber": "fdsf",
-      "description": "sdfsdfds",
-      "dateCreated": "2018-02-06T23:00:00.000Z",
-      "dateSold": "2018-02-14T23:00:00.000Z",
-      "datePayment": "2018-02-09T23:00:00.000Z",
+      "contractor": "Przychód",
+      "invoiceNumber": "1244144",
+      "date": {
+        "dateSold": "2018-02-13T07:47:23.480Z",
+        "dateCreated": "2018-02-13T07:47:26.026Z",
+        "datePayment": "2018-02-13T07:47:27.402Z"
+      },
       "payment_type": "Gotówka",
+      "description": "wfafw",
       "items": [
         {
-          "name": "sdf",
-          "quantity": "3",
-          "unit": "kg",
-          "vat": "3",
-          "priceNet": "4"
+          "name": "grat",
+          "quantity": "61",
+          "priceNet": "5",
+          "vat": "23",
+          "unit": "szt"
         }
       ],
       "isExpanse": false,
-      "id": 94436455493
+      "id": 94436455496
+    },
+    {
+      "contractor": "Wydatek",
+      "invoiceNumber": "124o251251",
+      "date": {
+        "dateCreated": "2018-02-13T07:47:59.303Z",
+        "dateSold": "2018-02-13T07:48:01.210Z",
+        "datePayment": "2018-02-13T07:48:02.590Z"
+      },
+      "payment_type": "Przelew",
+      "description": "wfaf",
+      "items": [
+        {
+          "name": "grat",
+          "quantity": "99",
+          "unit": "szt",
+          "vat": "23",
+          "priceNet": "10"
+        }
+      ],
+      "isExpanse": true,
+      "id": 94436455497
     }
   ],
-  "user": {
-    "id": 24436455475,
-    "company_name": "Abc",
-    "nip": 3454354,
-    "regon": 5325435,
-    "street": "Główna",
-    "building_number": "14",
-    "flat_number": "c",
-    "postal_code": "55-353",
-    "city": "Wrocław",
-    "vehicle": [
-      {
-        "name": "Opel",
-        "register_number": "dwa 3545",
-        "type": "dostawczy",
-        "owner": "leasing",
-        "volume": 1400,
-        "deducted_costs": 50
-      },
-      {
-        "name": "Volvo",
-        "register_number": "ds 34423",
-        "type": "osobowy",
-        "owner": "kredyt",
-        "volume": 1400,
-        "deducted_costs": 100
-      }
-    ],
-    "invoice": [
-      "23452345345",
-      "43345345345",
-      "4234234"
-    ],
-    "activate": true
-  }
+  "user": [
+    {
+      "id": 24436455475,
+      "company_name": "Abc",
+      "nip": 3454354,
+      "regon": 5325435,
+      "street": "Główna",
+      "building_number": "14",
+      "flat_number": "c",
+      "postal_code": "55-353",
+      "city": "Wrocław",
+      "vehicle": [
+        {
+          "name": "Opel",
+          "register_number": "dwa 3545",
+          "type": "dostawczy",
+          "owner": "leasing",
+          "volume": 1400,
+          "deducted_costs": 50
+        },
+        {
+          "name": "Volvo",
+          "register_number": "ds 34423",
+          "type": "osobowy",
+          "owner": "kredyt",
+          "volume": 1400,
+          "deducted_costs": 100
+        }
+      ],
+      "invoice": [
+        "23452345345",
+        "43345345345",
+        "4234234"
+      ],
+      "activate": true
+    },
+    {
+      "id": 34436455475,
+      "company_name": "Abc",
+      "nip": 3454354,
+      "regon": 5325435,
+      "street": "Główna",
+      "building_number": "14",
+      "flat_number": "c",
+      "postal_code": "55-353",
+      "city": "Wrocław",
+      "vehicle": [
+        {
+          "name": "Opel",
+          "register_number": "dwa 3545",
+          "type": "dostawczy",
+          "owner": "leasing",
+          "volume": 1400,
+          "deducted_costs": 50
+        },
+        {
+          "name": "mercedes",
+          "register_number": "ds 34423",
+          "type": "osobowy",
+          "owner": "kredyt",
+          "volume": 1400,
+          "deducted_costs": 100
+        },
+        {
+          "name": "lambo",
+          "register_number": "dwa pszemek",
+          "owner": "Własny",
+          "deducted_costs": "0"
+        },
+        {
+          "name": "c63 amg",
+          "register_number": "fwwafwsafw12",
+          "owner": "Własny",
+          "deducted_costs": "50"
+        },
+        {
+          "name": "dwd",
+          "register_number": "wdd",
+          "owner": "Własny",
+          "deducted_costs": "0"
+        },
+        {
+          "name": "Fiat",
+          "register_number": "dwa wda wda",
+          "owner": "Kredyt",
+          "deducted_costs": "100"
+        }
+      ],
+      "invoice": [
+        "23452345345",
+        "43345345345",
+        "4234234"
+      ],
+      "activate": true
+    }
+  ]
 }

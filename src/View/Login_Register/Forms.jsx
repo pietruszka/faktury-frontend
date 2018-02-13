@@ -11,6 +11,8 @@ import TextField from 'material-ui/TextField';
 // Styled Components
 import { Container, Page, Form, Button, SubmitButton } from './Form_style';
 
+import { setCookie } from './../../cookies';
+
 const Forms = () => (
   <Router>
       <div>
@@ -35,16 +37,18 @@ class Login extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-    
+
   handleChange(event) {
    this.setState({ [event.target.name] : event.target.value });
 }
 
   handleSubmit(e) {
     alert(`Login: ${this.state.login} Hasło: ${this.state.password}`);
+    setCookie('id', `${this.state.login}`, 2);
     e.preventDefault();
+    this.props.history.push('/invoices');
   }
-    
+
   render() {
     return(
       <div>
@@ -75,7 +79,7 @@ class Register extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-    
+
   handleChange(event) {
    this.setState({ [event.target.name] : event.target.value });
   }
@@ -84,7 +88,7 @@ class Register extends Component {
     alert(`Email: ${this.state.email} Login: ${this.state.login} Hasło: ${this.state.password}`);
     e.preventDefault();
   }
-    
+
   render() {
     return(
       <div>
@@ -96,7 +100,7 @@ class Register extends Component {
                 <TextField name="login" value={this.state.login} onChange={this.handleChange} floatingLabelText="Login" />
                 <TextField name="password" value={this.state.password} onChange={this.handleChange} type="password" floatingLabelText="Hasło" />
                 <SubmitButton type="submit" label="Zarejestruj Się" primary={true} />
-              </Form>    
+              </Form>
           </Page>
        </Container>
      </div>

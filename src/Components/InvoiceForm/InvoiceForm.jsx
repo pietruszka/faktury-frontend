@@ -129,13 +129,13 @@ class InvoiceForm extends Component {
 
 
           <FormElement>
-            <Field name="dateCreated" component={renderDatePicker} label="Data Wystawienia" />
+            <Field name="date.dateCreated" component={renderDatePicker} label="Data Wystawienia" />
 
-            <Field name="dateSold" component={renderDatePicker} label="Data Sprzedaży" />
+            <Field name="date.dateSold" component={renderDatePicker} label="Data Sprzedaży" />
           </FormElement>
 
           <FormElement>
-            <Field name="datePayment" component={renderDatePicker} label="Termin Płatności" />
+            <Field name="date.datePayment" component={renderDatePicker} label="Termin Płatności" />
 
             <Field name="payment_type" component={renderSelectField} floatingLabelText="Forma Płatności" >
               <MenuItem value="Gotówka" primaryText="Gotówka" />

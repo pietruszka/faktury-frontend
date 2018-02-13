@@ -35,14 +35,17 @@ export function addInvoice(invoice, cb) {
 
 export function fetchUser(id){
   const request = axios.get(`http://localhost:3004/user?id=${id}`);
+  console.log(id);
   return {
     type: FETCH_USER,
     payload: request
   }
 }
 
-export function addVehicle(vehicle) {
-  console.log(vehicle);
+export function addVehicle(user, userid, cb) {
+
+  console.log(userid);
+  const request = axios.put(`http://localhost:3004/user/${userid}`, user).then( ()=> cb() );
   return {
     type: ADD_VEHICLE,
     payload: null
