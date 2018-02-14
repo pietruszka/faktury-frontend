@@ -19,8 +19,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { Container, Page, Button } from './Main_style'
 
 import { AddCar } from './AddCar'
-import { fetchUser } from './../../Actions/Index';
+import { fetchUser, deleteVehicle } from './../../Actions/Index';
 import { getCookie } from './../../cookies';
+
+
 
 class CarsMain extends Component {
 
@@ -45,21 +47,21 @@ class CarsMain extends Component {
   }
 
 
-  renderVehicles = ({ register_number, name, type, owner }, i) => {
+  renderVehicles = ({ registerNumber, name, type, ownershipType, _id }, i) => {
 
     return(
-      <TableRow key={register_number}>
+      <TableRow key={_id}>
         <TableRowColumn>{name}</TableRowColumn>
-        <TableRowColumn>{register_number}</TableRowColumn>
+        <TableRowColumn>{registerNumber}</TableRowColumn>
         <TableRowColumn>{type}</TableRowColumn>
-        <TableRowColumn>{owner}</TableRowColumn>
-        <TableRowColumn><RaisedButton onClick={() => this.deleteCar(register_number)} label="Usuń" secondary={true} /></TableRowColumn>
+        <TableRowColumn>{ownershipType}</TableRowColumn>
+        <TableRowColumn><RaisedButton onClick={() => deleteVehicle(_id, () => this.props.fetchUser())} label="Usuń" secondary={true} /></TableRowColumn>
       </TableRow>
     );
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.user.result);
     if (this.props.user.length === 0){
       return <div>Loading...</div>;
     }
@@ -83,7 +85,7 @@ class CarsMain extends Component {
                 </TableRow>
               </TableHeader>
               <TableBody displayRowCheckbox={false} >
-                {this.props.user[0].vehicle.map(this.renderVehicles)}
+                {this.props.user.result.userVehicles.map(this.renderVehicles)}
               </TableBody>
             </Table>
           </Page>

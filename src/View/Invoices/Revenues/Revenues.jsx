@@ -28,7 +28,7 @@ class Revenues extends Component {
   }
 
   renderTable = (invoice, i) => {
-    if(!invoice.items || invoice.isExpanse === true) {
+    if(!invoice.items || invoice.isExpense === true ) {
       return null;
     }
     const netto = invoice.items.map((item)=>{
@@ -44,21 +44,20 @@ class Revenues extends Component {
     const nettoSum = netto.reduce(add);
 
     return(
-      <TableRow key={invoice.id}>
-        <TableRowColumn>{invoice.dateCreated}</TableRowColumn>
-        <TableRowColumn>{invoice.id}</TableRowColumn>
-        <TableRowColumn>{invoice.contractor}</TableRowColumn>
+      <TableRow key={invoice._id}>
+        <TableRowColumn>{invoice.date.created}</TableRowColumn>
+        <TableRowColumn>{invoice.invoiceNumber}</TableRowColumn>
+        <TableRowColumn>{invoice.contractor.name}</TableRowColumn>
         <TableRowColumn>{invoice.description}</TableRowColumn>
         <TableRowColumn>{nettoSum}</TableRowColumn>
         <TableRowColumn>{bruttoSum}</TableRowColumn>
-        <TableRowColumn><DeleteDialog id={invoice.id}/></TableRowColumn>
+        <TableRowColumn><DeleteDialog id={invoice._id}/></TableRowColumn>
       </TableRow>
     );
   }
 
   render() {
-    console.log(this.props.invoice);
-    if (!this.props.invoice){
+    if (!this.props.invoice.data){
       return <div>Loading...</div>;
     }
       return(
@@ -77,7 +76,7 @@ class Revenues extends Component {
               </TableRow>
             </TableHeader>
             <TableBody displayRowCheckbox={false}>
-              {this.props.invoice.map(this.renderTable)}
+              {this.props.invoice.data.map(this.renderTable)}
             </TableBody>
           </Table>
         </Fragment>

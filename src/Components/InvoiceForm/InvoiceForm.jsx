@@ -13,7 +13,7 @@ import { addInvoice } from './../../Actions/Index';
 const style = {
   margin: 12,
 };
-let isExpanse = null;
+let isExpense = null;
 
 
 const renderDatePicker = ({ input, label }) =>
@@ -102,13 +102,26 @@ class InvoiceForm extends Component {
   componentWillMount() {
     const { invoice } = this.props.match.params;
 
-    (['revenue', 'expanse'].includes(invoice))
-      ? this.isExpanse = invoice === 'expanse'
+    (['revenue', 'expense'].includes(invoice))
+      ? this.isExpense = invoice === 'expense'
       : this.props.history.push('/invoices');
   }
 
   onSubmit = (values) => {
-    values.isExpanse = this.isExpanse;
+    const contractor = {
+        "name": "Firma sp. z o.o.",
+        "place": "ul. komandorska 147",
+        "phone": "123456789",
+        "nip": "1234567890",
+        "postalCode": "43-546",
+        "city": "Wroclaw"
+    };
+    if (this.isExpense) {
+      values.type = "expense";
+    } else {
+      values.type = "income";
+    }
+    values.contractor = contractor;
     console.log(values);
     addInvoice(values);
   }
@@ -120,7 +133,7 @@ class InvoiceForm extends Component {
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <FormContainer>
           <FormElement>
-            <Field name="contractor" component={renderTextField} floatingLabelText="Kontrahent" />
+            {/* <Field name="contractor.name" component={renderTextField} floatingLabelText="Kontrahent" /> */}
 
             <Field name="invoiceNumber" component={renderTextField} floatingLabelText="Numer Faktury" />
 
@@ -129,15 +142,15 @@ class InvoiceForm extends Component {
 
 
           <FormElement>
-            <Field name="date.dateCreated" component={renderDatePicker} label="Data Wystawienia" />
+            <Field name="date.created" component={renderDatePicker} label="Data Wystawienia" />
 
-            <Field name="date.dateSold" component={renderDatePicker} label="Data Sprzedaży" />
+            <Field name="date.sold" component={renderDatePicker} label="Data Sprzedaży" />
           </FormElement>
 
           <FormElement>
-            <Field name="date.datePayment" component={renderDatePicker} label="Termin Płatności" />
+            <Field name="date.payment" component={renderDatePicker} label="Termin Płatności" />
 
-            <Field name="payment_type" component={renderSelectField} floatingLabelText="Forma Płatności" >
+            <Field name="paymentType" component={renderSelectField} floatingLabelText="Forma Płatności" >
               <MenuItem value="Gotówka" primaryText="Gotówka" />
               <MenuItem value="Przelew" primaryText="Przelew" />
             </Field>

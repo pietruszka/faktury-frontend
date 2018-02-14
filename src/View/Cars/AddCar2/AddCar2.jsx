@@ -48,28 +48,34 @@ const renderSelectField = ({
 
 class AddCar2 extends Component {
   onSubmit = (car) => {
-    const vehicle = [...this.props.user[0].vehicle, car];
-    const user = { ...this.props.user[0], vehicle };
-    const userid = this.props.user[0].id;
-    this.props.addVehicle(user, userid, () => this.props.fetchUser());
+    console.log(car);
+    addVehicle(car, () => this.props.fetchUser(this.props.user.result._id));
+    this.props.closeModal();
   }
 
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
-
+    console.log(this.props);
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <Field name="name" component={renderTextField} floatingLabelText="Opis/Nazwa" />
 
-        <Field name="register_number" component={renderTextField} floatingLabelText="Numer rejestracyjny" />
+        <Field name="registerNumber" component={renderTextField} floatingLabelText="Numer rejestracyjny" />
 
-        <Field name="owner" component={renderSelectField} label="Forma posiadania" >
+        <Field name="volume" component={renderTextField} floatingLabelText="Pojemność silnika" />
+
+        <Field name="type" component={renderSelectField} label="Typ samochodu" >
+          <MenuItem value="Osobowy" primaryText="Osobowy" />
+          <MenuItem value="Dostawczy" primaryText="Dostawczy" />
+        </Field>
+
+        <Field name="ownershipType" component={renderSelectField} label="Forma posiadania" >
           <MenuItem value="Własny" primaryText="Własny" />
           <MenuItem value="Leasing" primaryText="Leasing" />
           <MenuItem value="Kredyt" primaryText="Kredyt" />
         </Field>
 
-        <Field name="deducted_costs" component={renderSelectField} label="Koszty do odliczenia" >
+        <Field name="deductedCosts" component={renderSelectField} label="Koszty do odliczenia" >
           <MenuItem value="0" primaryText="0%" />
           <MenuItem value="50" primaryText="50%" />
           <MenuItem type="number" value="100" primaryText="100%" />
@@ -87,5 +93,5 @@ export default reduxForm({
   form: 'AddCarForm', // a unique identifier for this form
   validate
 })(
-  connect(null, { addVehicle, fetchUser })(AddCar2)
+  connect(null, {  fetchUser })(AddCar2)
 );

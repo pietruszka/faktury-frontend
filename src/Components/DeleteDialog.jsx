@@ -30,7 +30,6 @@ class DeleteDialog extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const actions = [
       <FlatButton
         label="Anuluj"
