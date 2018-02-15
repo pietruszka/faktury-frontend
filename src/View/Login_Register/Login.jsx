@@ -28,15 +28,6 @@ class Login extends Component {
     console.log(this.state);
     e.preventDefault();
     this.props.loginUser(this.state);
-    // this.props.history.push('/invoices');
-    console.log(this.props);
-    const token = getCookie('token');
-    console.log(token);
-    const { history } = this.props;
-    if(token === this.props) {
-
-    }
-    history.push('/home');
   }
 
   render() {

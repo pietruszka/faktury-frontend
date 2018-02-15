@@ -22,18 +22,9 @@ import InvoiceForm from './../Components/InvoiceForm/InvoiceForm';
 
 import { deleteCookie } from './../cookies';
 
-const Home = () => (
-    <div>
-    <Router>
-      <Switch>
-          <Route path="/home" component={Homeview} />
-          <Route path="/" component={Forms} />      
-      </Switch>
-    </Router>
-    </div>
-);
 
-class Homeview extends React.Component {
+
+export default class Homeview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {open: false};
@@ -64,5 +55,3 @@ class Homeview extends React.Component {
     )
   }
 }
-
-export default Home;
