@@ -2,7 +2,7 @@
 import React from 'react'
 
 // React Router
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 // Material-UI
 import Drawer from 'material-ui/Drawer';
@@ -22,7 +22,18 @@ import InvoiceForm from './../Components/InvoiceForm/InvoiceForm';
 
 import { deleteCookie } from './../cookies';
 
-export default class Home extends React.Component {
+const Home = () => (
+    <div>
+    <Router>
+      <Switch>
+          <Route path="/home" component={Homeview} />
+          <Route path="/" component={Forms} />      
+      </Switch>
+    </Router>
+    </div>
+);
+
+class Homeview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {open: false};
@@ -48,9 +59,10 @@ export default class Home extends React.Component {
               <Route path='/cars' component={CarsMain} />
               <Route path='/settings' component={SettingsMain} />
               <Route path='/add/:invoice' component={InvoiceForm} />
-            <Forms />
         </div>
       </Router>
     )
   }
 }
+
+export default Home;
