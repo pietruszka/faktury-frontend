@@ -26,6 +26,8 @@ export default class Register extends Component {
     console.log(this.state);
     e.preventDefault();
     registerUser(this.state);
+    const { history } = this.props;
+    history.push('/home');
   }
 
   render() {
