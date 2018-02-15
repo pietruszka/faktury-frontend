@@ -6,6 +6,7 @@ import { Container, Page, Form, Button, SubmitButton } from './Form_style';
 import { connect } from 'react-redux';
 import { loginUser } from './../../Actions/Index';
 
+import { getCookie } from './../../cookies';
 
 class Login extends Component {
   constructor(props) {
@@ -28,6 +29,14 @@ class Login extends Component {
     e.preventDefault();
     this.props.loginUser(this.state);
     // this.props.history.push('/invoices');
+    console.log(this.props);
+    const token = getCookie('token');
+    console.log(token);
+    const { history } = this.props;
+    if(token === this.props) {
+
+    }
+    history.push('/home');
   }
 
   render() {
