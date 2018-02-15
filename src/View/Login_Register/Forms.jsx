@@ -32,6 +32,7 @@ class Login extends Component {
     this.state = {
         login: '',
         password: '',
+        error: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -43,11 +44,19 @@ class Login extends Component {
 }
 
   handleSubmit(e) {
-    alert(`Login: ${this.state.login} Hasło: ${this.state.password}`);
-    setCookie('id', `${this.state.login}`, 2);
-    e.preventDefault();
-    this.props.history.push('/invoices');
+  e.preventDefault();
+
+  const { history } = this.props;
+
+  this.setState({ error: false });
+
+  if (!(this.state.login === 'janusz' && this.state.password === 'haslo')) {
+    return this.setState({ error: true });
   }
+
+  //store.set('loggedIn', true);
+  history.push('/home');
+}
 
   render() {
     return(
@@ -74,6 +83,7 @@ class Register extends Component {
         email: '',
         login: '',
         password: '',
+        error: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -85,9 +95,20 @@ class Register extends Component {
   }
 
   handleSubmit(e) {
-    alert(`Email: ${this.state.email} Login: ${this.state.login} Hasło: ${this.state.password}`);
-    e.preventDefault();
+  e.preventDefault();
+
+  const { username, password } = this.state;
+  const { history } = this.props;
+
+  this.setState({ error: false });
+
+  if (!(this.state.email === 'janusz@gmail.com' && this.state.login === 'janusz' && this.state.password === 'haslo')) {
+    return this.setState({ error: true });
   }
+
+  //store.set('loggedIn', true);
+  history.push('/home');
+}
 
   render() {
     return(
