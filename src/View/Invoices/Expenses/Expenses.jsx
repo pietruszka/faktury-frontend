@@ -7,7 +7,7 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import { ContentContainer, StyledRaisedButton } from './Expenses_style'
+import { ContentContainer, Button } from './Expenses_style'
 import RaisedButton from 'material-ui/RaisedButton';
 import { fetchInvoices } from './../../../Actions/Index';
 import DeleteDialog from './../../../Components/DeleteDialog';
@@ -55,7 +55,7 @@ class Expenses extends Component {
     }
       return(
         <Fragment>
-          <Link to='/add/expense'><RaisedButton label="Dodaj Fakturę" primary={true} /></Link>
+          <Link to='/add/expense'><Button label="Dodaj Fakturę" primary={true} /></Link>
           <Table>
             <TableHeader displaySelectAll={false}>
               <TableRow>

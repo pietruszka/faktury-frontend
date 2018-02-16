@@ -5,6 +5,6 @@ export const ContentContainer = styled.div`
     margin: 10px;
 `;
 
-export const StyledRaisedButton = styled(RaisedButton)`
-  margin: 12px;
+export const Button = styled(RaisedButton)`
+  margin: 10px;
 `;

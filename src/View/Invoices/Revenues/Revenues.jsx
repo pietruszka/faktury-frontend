@@ -57,12 +57,12 @@ class Revenues extends Component {
   }
 
   render() {
-    if (!this.props.invoice.data){
+   if (!this.props.invoice.data){
       return <div>Loading...</div>;
     }
       return(
         <Fragment>
-          <Link to='/add/revenue'><RaisedButton label="Dodaj Fakturę" primary={true} /></Link>
+          <Link to='/add/revenue'><Button label="Dodaj Fakturę" primary={true} /></Link>
           <Table>
             <TableHeader displaySelectAll={false}>
               <TableRow>

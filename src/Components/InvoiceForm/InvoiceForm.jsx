@@ -6,7 +6,7 @@ import MenuItem from 'material-ui/MenuItem'
 import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
-import { FormContainer, ItemContainer, FormElement, ItemForm } from './InvoiceForm_style';
+import { FormContainer, ItemContainer, FormElement, ItemForm, Text, Button } from './InvoiceForm_style';
 import { connect } from 'react-redux';
 import { addInvoice } from './../../Actions/Index';
 
@@ -68,17 +68,17 @@ const renderSelectField = ({
 const renderItems = ({ fields, meta: { error, submitFailed } }) => (
   <Fragment>
     <ItemContainer>
-      <RaisedButton label="Add Item" primary={true} type="button" onClick={() => fields.push({})} />
+      <RaisedButton label="Dodaj przedmiot" primary={true} type="button" onClick={() => fields.push({})} />
       {submitFailed && error && <span>{error}</span>}
     </ItemContainer>
     {fields.map((item, index) => (
       <ItemForm key={index}>
 
-        <h4>Item #{index + 1}</h4>
+        <Text>L.p. {index + 1}</Text>
         <FormElement>
-          <Field name={`${item}.name`} type="text" component={renderTextField} label="name" />
-          <Field name={`${item}.quantity`} type="number" component={renderTextField} label="ilość" />
-          <Field name={`${item}.unit`} type="text" component={renderSelectField} label="jednostka" >
+          <Field name={`${item}.name`} type="text" component={renderTextField} label="Nazwa/Opis" />
+          <Field name={`${item}.quantity`} type="number" component={renderTextField} label="Ilość" />
+          <Field name={`${item}.unit`} type="text" component={renderSelectField} label="Jednostka" >
               <MenuItem value="szt" primaryText="szt" />
               <MenuItem value="kg" primaryText="kg" />
           </Field>
@@ -86,10 +86,10 @@ const renderItems = ({ fields, meta: { error, submitFailed } }) => (
         <FormElement>
           <Field name={`${item}.vat`} type="number" component={renderTextField} label="VAT %" />
           <Field name={`${item}.priceNet`} type="number" component={renderTextField} label="Netto" />
-          <RaisedButton
+          <Button
             secondary={true}
             type="button"
-            label="Remove Item"
+            label="Usuń"
             onClick={() => fields.remove(index)}
           />
         </FormElement>
@@ -137,9 +137,8 @@ class InvoiceForm extends Component {
 
             <Field name="invoiceNumber" component={renderTextField} floatingLabelText="Numer Faktury" />
 
-            <Field name="description" component={renderTextField} floatingLabelText="Opis" multiLine={true} rows={2} />
+            <Field name="description" component={renderTextField} floatingLabelText="Opis" />
           </FormElement>
-
 
           <FormElement>
             <Field name="date.created" component={renderDatePicker} label="Data Wystawienia" />
