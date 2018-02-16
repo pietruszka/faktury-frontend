@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getCookie } from './../cookies';
+import req from 'superagent';
 
 export const FETCH_INVOICES = 'FETCH_INVOICES';
 export const DELETE_INVOICE = 'DELETE_INVOICE';
@@ -10,7 +11,7 @@ export const DELETE_VEHICLE = 'DELETE_VEHICLE';
 export const UPDATE_USER = 'UPDATE_USER';
 export const ADD_USER = 'ADD_USER';
 export const LOGIN_USER = 'LOGIN_USER';
-
+export const UPLOAD_FILE = 'UPLOAD_FILE';
 
 export function fetchInvoices() {
   const token = getCookie('token');
@@ -125,4 +126,32 @@ export function loginUser(user) {
     type: LOGIN_USER,
     payload: request
   }
+}
+
+export function uploadFile(file) {
+    const token = getCookie('token');
+    const config = {
+    headers: {'authorization': token}
+  };
+  console.log(file)
+  const request = axios.post(`http://localhost:3005/api/file`, file, config);
+  return {
+    type: UPLOAD_FILE,
+    payload: null
+  }
+}
+
+export function uploadInvoice(file) {
+  const token = getCookie('token');
+  var invoice = new FormData();
+  invoice.append('invoice', file[0]);
+
+  req.post('http://localhost:3005/api/file')
+    .send(invoice)
+    .set('authorization', token)
+    .end(function(err, resp) {
+      if (err) { console.error(err); }
+      console.log(resp);
+      return resp;
+    });
 }

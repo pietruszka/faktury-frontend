@@ -9,6 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { FormContainer, ItemContainer, FormElement, ItemForm, Text, Button } from './InvoiceForm_style';
 import { connect } from 'react-redux';
 import { addInvoice } from './../../Actions/Index';
+import DropzoneComponent from './Dropzone';
 
 const style = {
   margin: 12,
@@ -67,10 +68,7 @@ const renderSelectField = ({
 
 const renderItems = ({ fields, meta: { error, submitFailed } }) => (
   <Fragment>
-    <ItemContainer>
-      <RaisedButton label="Dodaj przedmiot" primary={true} type="button" onClick={() => fields.push({})} />
-      {submitFailed && error && <span>{error}</span>}
-    </ItemContainer>
+
     {fields.map((item, index) => (
       <ItemForm key={index}>
 
@@ -95,6 +93,10 @@ const renderItems = ({ fields, meta: { error, submitFailed } }) => (
         </FormElement>
       </ItemForm>
     ))}
+    <ItemContainer>
+      <RaisedButton label="Add Item" primary={true} type="button" onClick={() => fields.push({})} />
+      {submitFailed && error && <span>{error}</span>}
+    </ItemContainer>
   </Fragment>
 )
 
@@ -131,6 +133,8 @@ class InvoiceForm extends Component {
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
+        <DropzoneComponent />
+
         <FormContainer>
           <FormElement>
             {/* <Field name="contractor.name" component={renderTextField} floatingLabelText="Kontrahent" /> */}
