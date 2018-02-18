@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
-import { Container, Page, Form, Button, SubmitButton } from './Form_style';
+import { Container, Page, Form, SubmitButton } from './Form_style';
 
-import { setCookie } from './../../cookies';
 import { registerUser } from './../../Actions/Index';
 
 export default class Register extends Component {

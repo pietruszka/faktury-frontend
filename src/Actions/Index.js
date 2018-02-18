@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { getCookie } from './../cookies';
-import req from 'superagent';
 
 export const FETCH_INVOICES = 'FETCH_INVOICES';
 export const DELETE_INVOICE = 'DELETE_INVOICE';
@@ -46,20 +45,19 @@ export function addInvoice(invoice, cb) {
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.post(`http://localhost:3005/api/invoice`, invoice, config);
+  const request = axios.post(`http://localhost:3005/api/invoice`, invoice, config).then(()=> cb());
   return {
     type: ADD_INVOICE,
     payload: request
   }
 }
 
-export function fetchUser(id){
+export function fetchUser(){
   const token = getCookie('token');
   const config = {
   headers: {'authorization': token}
 };
   const request = axios.get(`http://localhost:3005/api/user`, config);
-  console.log(id);
   return {
     type: FETCH_USER,
     payload: request
@@ -118,40 +116,19 @@ export function registerUser(user) {
   }
 }
 
-export function loginUser(user) {
 
-  const request = axios.post(`http://localhost:3005/api/login`, user);
-  console.log(request);
-  return {
-    type: LOGIN_USER,
-    payload: request
-  }
-}
-
-export function uploadFile(file) {
+export function uploadFile(file, cb) {
     const token = getCookie('token');
     const config = {
-    headers: {'authorization': token}
+    headers: {'authorization': token, 'content-type': 'multipart/form-data'}
   };
-  console.log(file)
-  const request = axios.post(`http://localhost:3005/api/file`, file, config);
+  const formData = new FormData();
+  formData.append('invoice', file[0]);
+  console.log(formData);
+  const request = axios.post(`http://localhost:3005/api/file`, formData, config).then((data)=>{cb(data.data.data[0])});
+  console.log(request);
   return {
     type: UPLOAD_FILE,
     payload: null
   }
-}
-
-export function uploadInvoice(file) {
-  const token = getCookie('token');
-  var invoice = new FormData();
-  invoice.append('invoice', file[0]);
-
-  req.post('http://localhost:3005/api/file')
-    .send(invoice)
-    .set('authorization', token)
-    .end(function(err, resp) {
-      if (err) { console.error(err); }
-      console.log(resp);
-      return resp;
-    });
 }

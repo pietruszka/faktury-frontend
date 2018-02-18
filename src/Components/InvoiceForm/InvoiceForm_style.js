@@ -13,7 +13,7 @@ export const ItemContainer = styled.div`
 `;
 
 export const FormElement = styled.div`
-  padding: 10px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
 `;

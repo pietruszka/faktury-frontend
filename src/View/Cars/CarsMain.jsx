@@ -1,8 +1,7 @@
 // React
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import AddCarForm from './AddCar2/AddCar2';
+import { withRouter } from 'react-router';
 // Material-UI
 import AppBar from 'material-ui/AppBar';
 import {
@@ -16,7 +15,7 @@ import {
 import RaisedButton from 'material-ui/RaisedButton';
 
 // Styled Components
-import { Container, Page, Button } from './Main_style'
+import { Container, Page } from './Main_style'
 
 import { AddCar } from './AddCar'
 import { fetchUser, deleteVehicle } from './../../Actions/Index';
@@ -33,7 +32,7 @@ class CarsMain extends Component {
   }
 
   handleClickEdit() {
-      if (this.state.allowEdit == false) {
+      if (this.state.allowEdit === false) {
         this.setState({allowEdit: true});
       } else {
         this.setState({allowEdit: false});
@@ -95,7 +94,8 @@ class CarsMain extends Component {
     );
   }
 }
+const CarsMainWithRouter = withRouter(CarsMain);
 function mapStateToProps(state) {
   return { user: state.user, form: state.form.AddCarForm };
 }
- export default connect(mapStateToProps, { fetchUser }) (CarsMain);
+ export default connect(mapStateToProps, { fetchUser }) (CarsMainWithRouter);

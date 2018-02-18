@@ -1,9 +1,8 @@
 // React
 import React, { Component } from 'react';
-import { getCookie } from './../../cookies';
 import { fetchUser, updateUser } from './../../Actions/Index';
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router';
 // Material-UI
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
@@ -38,7 +37,7 @@ class SettingsMain extends Component {
 
   handleClickEdit = () => this.setState({
     data: {
-      companyName: this.props.user.result.company.name,
+      name: this.props.user.result.company.name,
       nip: `${this.props.user.result.company.nip}`,
       regon: `${this.props.user.result.company.regon}`,
       street: this.props.user.result.company.street,
@@ -74,18 +73,24 @@ class SettingsMain extends Component {
 
   render() {
     const { disabledEdit, showSaveButton } = this.state;
-      console.log(this.props);
+
 
     if (this.props.user.length === 0){
       return <div>Loading...</div>;
     }
-    const { name, nip, regon, street, buildingNumber, flatNumber, postalCode, city } = this.props.user.result.company;
+    console.log(this.props.user.result);
+
+
+    const { name, nip, regon, street, buildingNumber, flatNumber, postalCode, city } = this.props.user.result.company ? this.props.user.result.company : this.state.data;
+
+
+
     return(
       <div>
         <Container zDepth={1}>
           <Page>
             <AppBar title="Ustawienia" showMenuIconButton={false} zDepth={0} /> <br/>
-            <TextField name='companyName' floatingLabelText='Nazwa Firmy' defaultValue={name} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
+            <TextField name='name' floatingLabelText='Nazwa Firmy' defaultValue={name} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
             <TextField type='text' name='nip' floatingLabelText='NIP' defaultValue={nip} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
             <TextField name='regon' floatingLabelText='Regon' defaultValue={regon} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
             <TextField name='street' floatingLabelText='Ulica' defaultValue={street} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
@@ -101,8 +106,9 @@ class SettingsMain extends Component {
     );
   }
 }
+const SettingsMainWithRouter = withRouter(SettingsMain)
 
 function mapStateToProps(state) {
   return { user: state.user };
 }
-export default connect(mapStateToProps, { fetchUser }) (SettingsMain);
+export default connect(mapStateToProps, { fetchUser }) (SettingsMainWithRouter);

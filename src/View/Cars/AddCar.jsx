@@ -4,20 +4,11 @@ import React, { Component } from 'react';
 // Material UI
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import AddCarForm from './AddCar2/AddCar2';
-import MenuItem from 'material-ui/MenuItem';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
+
 
 // Styled Components
-import { Button, AddButton, Form, InputsContainer, TextInput, Date, ComboBox, Text } from './AddCar_style';
+import { Button } from './AddCar_style';
 
 
 export class AddCar extends Component {

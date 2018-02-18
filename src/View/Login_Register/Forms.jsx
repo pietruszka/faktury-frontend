@@ -1,18 +1,14 @@
 // React
-import React, { Component } from 'react';
+import React from 'react';
 import Login from './Login';
 import Register from './Register';
 // React Router
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-// Material UI
-import AppBar from 'material-ui/AppBar';
-import TextField from 'material-ui/TextField';
 
 // Styled Components
-import { Container, Page, Form, Button, SubmitButton } from './Form_style';
+import { Container, Button } from './Form_style';
 
-import { setCookie } from './../../cookies';
 
 const Forms = () => (
   <Router>

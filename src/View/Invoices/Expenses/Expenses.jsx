@@ -7,12 +7,12 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import { ContentContainer, Button } from './Expenses_style'
-import RaisedButton from 'material-ui/RaisedButton';
+import { Button } from './Expenses_style'
 import { fetchInvoices } from './../../../Actions/Index';
 import DeleteDialog from './../../../Components/DeleteDialog';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 class Expenses extends Component {
   componentDidMount() {
@@ -23,17 +23,6 @@ class Expenses extends Component {
     if(!invoice.items || invoice.isExpense === false ) {
       return null;
     }
-    const netto = invoice.items.map((item)=>{
-      return item.priceNet * item.quantity
-    });
-
-    const brutto = invoice.items.map((item)=>{
-      return item.priceNet * item.quantity * (1 + (item.vat/100))
-    });
-
-    const add = (a, b) => a + b;
-    const bruttoSum = brutto.reduce(add);
-    const nettoSum = netto.reduce(add);
 
     return(
       <TableRow key={invoice._id}>
@@ -41,8 +30,8 @@ class Expenses extends Component {
         <TableRowColumn>{invoice.invoiceNumber}</TableRowColumn>
         <TableRowColumn>{invoice.contractor.name}</TableRowColumn>
         <TableRowColumn>{invoice.description}</TableRowColumn>
-        <TableRowColumn>{nettoSum}</TableRowColumn>
-        <TableRowColumn>{bruttoSum}</TableRowColumn>
+        <TableRowColumn>{invoice.net}</TableRowColumn>
+        <TableRowColumn>{invoice.gross}</TableRowColumn>
         <TableRowColumn><DeleteDialog id={invoice._id}/></TableRowColumn>
       </TableRow>
     );
@@ -79,4 +68,4 @@ class Expenses extends Component {
 function mapStateToProps(state) {
   return { invoice: state.invoice };
 }
- export default connect(mapStateToProps, { fetchInvoices }) (Expenses);
+ export default withRouter(connect(mapStateToProps, { fetchInvoices }) (Expenses));

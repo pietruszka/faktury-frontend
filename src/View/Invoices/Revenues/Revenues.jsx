@@ -1,6 +1,6 @@
 // React
 import React, { Component, Fragment } from 'react';
-
+import { withRouter } from 'react-router';
 // Material UI
 import {
   Table,
@@ -10,9 +10,8 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import RaisedButton from 'material-ui/RaisedButton';
 
-import { ContentContainer, Button } from './Revenues_style';
+import { Button } from './Revenues_style';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchInvoices } from './../../../Actions/Index';
@@ -31,34 +30,24 @@ class Revenues extends Component {
     if(!invoice.items || invoice.isExpense === true ) {
       return null;
     }
-    const netto = invoice.items.map((item)=>{
-      return item.priceNet * item.quantity
-    });
-
-    const brutto = invoice.items.map((item)=>{
-      return item.priceNet * item.quantity * (1 + (item.vat/100))
-    });
-
-    const add = (a, b) => a + b;
-    const bruttoSum = brutto.reduce(add);
-    const nettoSum = netto.reduce(add);
 
     return(
-      <TableRow key={invoice._id}>
+      <TableRow key={invoice._id} >
         <TableRowColumn>{invoice.date.created}</TableRowColumn>
         <TableRowColumn>{invoice.invoiceNumber}</TableRowColumn>
         <TableRowColumn>{invoice.contractor.name}</TableRowColumn>
         <TableRowColumn>{invoice.description}</TableRowColumn>
-        <TableRowColumn>{nettoSum}</TableRowColumn>
-        <TableRowColumn>{bruttoSum}</TableRowColumn>
+        <TableRowColumn>{invoice.net}</TableRowColumn>
+        <TableRowColumn>{invoice.gross}</TableRowColumn>
         <TableRowColumn><DeleteDialog id={invoice._id}/></TableRowColumn>
       </TableRow>
     );
   }
 
   render() {
+    console.log(this.props);
    if (!this.props.invoice.data){
-      return <div>Loading...</div>;
+     return <div>Loading...</div>;
     }
       return(
         <Fragment>
@@ -83,8 +72,9 @@ class Revenues extends Component {
       )
     }
 }
+const RevenuesWithRouter = withRouter(Revenues);
 
 function mapStateToProps(state) {
   return { invoice: state.invoice };
 }
- export default connect(mapStateToProps, { fetchInvoices }) (Revenues);
+ export default withRouter(connect(mapStateToProps, { fetchInvoices }) (Revenues));

@@ -10,11 +10,11 @@ import { FormContainer, ItemContainer, FormElement, ItemForm, Text, Button } fro
 import { connect } from 'react-redux';
 import { addInvoice } from './../../Actions/Index';
 import DropzoneComponent from './Dropzone';
+import { withRouter } from 'react-router';
 
 const style = {
   margin: 12,
 };
-let isExpense = null;
 
 
 const renderDatePicker = ({ input, label }) =>
@@ -22,16 +22,6 @@ const renderDatePicker = ({ input, label }) =>
     floatingLabelText={label}
     onChange={(event, value) => input.onChange(value)}
   />
-
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} type={type} placeholder={label} />
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-)
 
 const renderTextField = ({
   input,
@@ -94,13 +84,24 @@ const renderItems = ({ fields, meta: { error, submitFailed } }) => (
       </ItemForm>
     ))}
     <ItemContainer>
-      <RaisedButton label="Add Item" primary={true} type="button" onClick={() => fields.push({})} />
+      <RaisedButton label="Dodaj towar lub usługę" primary={true} type="button" onClick={() => fields.push({})} />
       {submitFailed && error && <span>{error}</span>}
     </ItemContainer>
   </Fragment>
 )
 
 class InvoiceForm extends Component {
+  constructor() {
+    super()
+    this.state = { invoice: [] }
+  }
+
+  updateInvoiceFiles = (path) => {
+    this.setState({
+      invoice: [...this.state.invoice, path]
+    }, ()=> console.log(this.state.invoice));
+  }
+
   componentWillMount() {
     const { invoice } = this.props.match.params;
 
@@ -110,49 +111,48 @@ class InvoiceForm extends Component {
   }
 
   onSubmit = (values) => {
-    const contractor = {
-        "name": "Firma sp. z o.o.",
-        "place": "ul. komandorska 147",
-        "phone": "123456789",
-        "nip": "1234567890",
-        "postalCode": "43-546",
-        "city": "Wroclaw"
-    };
     if (this.isExpense) {
       values.type = "expense";
     } else {
       values.type = "income";
     }
-    values.contractor = contractor;
-    console.log(values);
-    addInvoice(values);
+    values.files = this.state.invoice;
+    addInvoice(values, (props)=> {
+      this.props.history.push('/invoices');
+    });
+
   }
 
   render() {
+
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
-        <DropzoneComponent />
 
+        <DropzoneComponent updateInvoiceFiles={this.updateInvoiceFiles} invoice={this.state.invoice} />
         <FormContainer>
           <FormElement>
-            {/* <Field name="contractor.name" component={renderTextField} floatingLabelText="Kontrahent" /> */}
+            <h1>Kontrahent</h1>
+            <Field name="contractor.name" component={renderTextField} floatingLabelText="Nazwa Kontrahenta" />
+            <Field name="contractor.place" component={renderTextField} floatingLabelText="Adres Kontrahenta" />
+            <Field name="contractor.phone" component={renderTextField} floatingLabelText="Numer Telefonu Kontrahenta" />
+            <Field name="contractor.nip" component={renderTextField} floatingLabelText="NIP Kontrahenta" />
+            <Field name="contractor.postalCode" component={renderTextField} floatingLabelText="Kod Pocztowy Kontrahenta" />
+            <Field name="contractor.city" component={renderTextField} floatingLabelText="Miasto Kontrahenta" />
 
+          </FormElement>
+
+          <FormElement>
+            <h1>Faktura</h1>
             <Field name="invoiceNumber" component={renderTextField} floatingLabelText="Numer Faktury" />
 
             <Field name="description" component={renderTextField} floatingLabelText="Opis" />
-          </FormElement>
 
-          <FormElement>
             <Field name="date.created" component={renderDatePicker} label="Data Wystawienia" />
 
             <Field name="date.sold" component={renderDatePicker} label="Data Sprzedaży" />
-          </FormElement>
-
-          <FormElement>
             <Field name="date.payment" component={renderDatePicker} label="Termin Płatności" />
-
             <Field name="paymentType" component={renderSelectField} floatingLabelText="Forma Płatności" >
               <MenuItem value="Gotówka" primaryText="Gotówka" />
               <MenuItem value="Przelew" primaryText="Przelew" />
@@ -167,17 +167,18 @@ class InvoiceForm extends Component {
 
 
         <FormContainer>
-          <RaisedButton label="Dodaj" primary={true} type="submit" disabled={pristine || submitting} style={style} />
+          <RaisedButton label="Zapisz" primary={true} type="submit" disabled={pristine || submitting} style={style} />
           <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset} />
         </FormContainer>
       </form>
     )
 	}
 }
+const InvoiceFormWithRouter = withRouter(InvoiceForm);
 
 export default reduxForm({
   form: 'fieldArrays', // a unique identifier for this form
   validate
 })(
-  connect (null,{ addInvoice }) (InvoiceForm)
+  connect (null,{ addInvoice }) (InvoiceFormWithRouter)
 );

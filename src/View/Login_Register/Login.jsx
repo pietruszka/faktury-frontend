@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
-import { Container, Page, Form, Button, SubmitButton } from './Form_style';
+import { Container, Page, Form, SubmitButton } from './Form_style';
+import axios from 'axios';
 
-import { connect } from 'react-redux';
-import { loginUser } from './../../Actions/Index';
 
-import { getCookie } from './../../cookies';
+import { setCookie } from './../../cookies';
+import { withRouter } from 'react-router';
 
 class Login extends Component {
   constructor(props) {
@@ -25,9 +25,11 @@ class Login extends Component {
 }
 
   handleSubmit(e) {
-    console.log(this.state);
     e.preventDefault();
-    this.props.loginUser(this.state);
+     const request = axios.post(`http://localhost:3005/api/login`, this.state).then( (value) => {
+       setCookie('token', `${value.data.token}`);
+       this.props.history.push('/invoices');
+     });
   }
 
   render() {
@@ -47,8 +49,7 @@ class Login extends Component {
         )
     }
 };
+const LoginWithRouter = withRouter(Login)
 
-function mapStateToProps(state) {
-  return { login: state.login };
-}
- export default connect(mapStateToProps, { loginUser }) (Login);
+
+ export default LoginWithRouter;
