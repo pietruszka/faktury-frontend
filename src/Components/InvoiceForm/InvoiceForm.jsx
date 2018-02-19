@@ -92,14 +92,8 @@ const renderItems = ({ fields, meta: { error, submitFailed } }) => (
 
 class InvoiceForm extends Component {
   constructor() {
-    super()
-    this.state = { invoice: [] }
-  }
-
-  updateInvoiceFiles = (path) => {
-    this.setState({
-      invoice: [...this.state.invoice, path]
-    }, ()=> console.log(this.state.invoice));
+    super();
+    this.state = { invoice: [] };
   }
 
   componentWillMount() {
@@ -117,10 +111,15 @@ class InvoiceForm extends Component {
       values.type = "income";
     }
     values.files = this.state.invoice;
-    addInvoice(values, (props)=> {
+    addInvoice(values, ()=> {
       this.props.history.push('/invoices');
     });
+  }
 
+  updateInvoiceFiles = (path) => {
+    this.setState({
+      invoice: [...this.state.invoice, path]
+    }, ()=> console.log(this.state.invoice));
   }
 
   render() {
@@ -167,12 +166,12 @@ class InvoiceForm extends Component {
 
 
         <FormContainer>
-          <RaisedButton label="Zapisz" primary={true} type="submit" disabled={pristine || submitting} style={style} />
-          <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset} />
+          <RaisedButton label="Zapisz" primary type="submit" disabled={pristine || submitting} style={style} />
+          <RaisedButton label="Wyczyść" secondary style={style} disabled={pristine || submitting} onClick={reset} />
         </FormContainer>
       </form>
-    )
-	}
+    );
+  }
 }
 const InvoiceFormWithRouter = withRouter(InvoiceForm);
 
@@ -180,5 +179,5 @@ export default reduxForm({
   form: 'fieldArrays', // a unique identifier for this form
   validate
 })(
-  connect (null,{ addInvoice }) (InvoiceFormWithRouter)
+  connect(null,{ addInvoice })(InvoiceFormWithRouter)
 );

@@ -133,15 +133,3 @@ export function uploadFile(file, cb) {
     payload: null
   }
 }
-
-export function generatePdf(id){
-  const token = getCookie('token');
-  const config = {
-  headers: {'authorization': token}
-};
-  const request = axios.get(`http://localhost:3005/api/pdf/${id}`, config).then((value)=> console.log(value));
-  return {
-    type: GENERATE_PDF,
-    payload: null
-  }
-}

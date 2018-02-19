@@ -1,5 +1,5 @@
 // React
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { fetchUser, updateUser } from './../../Actions/Index';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -36,16 +36,7 @@ class SettingsMain extends Component {
   }
 
   handleClickEdit = () => this.setState({
-    data: {
-      name: this.props.user.result.company.name,
-      nip: `${this.props.user.result.company.nip}`,
-      regon: `${this.props.user.result.company.regon}`,
-      street: this.props.user.result.company.street,
-      buildingNumber: `${this.props.user.result.company.buildingNumber}`,
-      flatNumber: `${this.props.user.result.company.flatNumber}`,
-      postalCode: this.props.user.result.company.postalCode,
-      city: this.props.user.result.company.city,
-    },
+    data: this.props.user.result.company,
     disabledEdit: false,
     showSaveButton: true,
   });
@@ -55,8 +46,6 @@ class SettingsMain extends Component {
     console.log(this.state.data);
     updateUser(this.state.data, () => this.props.fetchUser());
   }
-
-  saveButton = () => <Button label="ZAPISZ" secondary={true} onClick={this.handleClickSave} />;
 
   handleChange = (e) => {
     this.setState({
@@ -68,8 +57,18 @@ class SettingsMain extends Component {
     });
   }
 
-
-
+  Field = ({ name, label, defaultValue }) => (
+    <Fragment>
+      <TextField
+        name={name}
+        floatingLabelText={label}
+        defaultValue={defaultValue}
+        disabled={this.state.disabledEdit}
+        onChange={data => this.handleChange(data)}
+      />
+      <br />
+    </Fragment>
+  );
 
   render() {
     const { disabledEdit, showSaveButton } = this.state;
@@ -81,25 +80,24 @@ class SettingsMain extends Component {
     console.log(this.props.user.result);
 
 
-    const { name, nip, regon, street, buildingNumber, flatNumber, postalCode, city } = this.props.user.result.company ? this.props.user.result.company : this.state.data;
-
-
+    const { name, nip, regon, street, buildingNumber, flatNumber, postalCode, city } = this.props.user.result.company;
+    const { Field } = this;
 
     return(
       <div>
         <Container zDepth={1}>
           <Page>
             <AppBar title="Ustawienia" showMenuIconButton={false} zDepth={0} /> <br/>
-            <TextField name='name' floatingLabelText='Nazwa Firmy' defaultValue={name} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <TextField type='text' name='nip' floatingLabelText='NIP' defaultValue={nip} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <TextField name='regon' floatingLabelText='Regon' defaultValue={regon} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <TextField name='street' floatingLabelText='Ulica' defaultValue={street} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <TextField name='buildingNumber' floatingLabelText='Numer budynku' defaultValue={buildingNumber} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <TextField name='flatNumber' floatingLabelText='Numer lokalu' defaultValue={flatNumber} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <TextField name='postalCode' floatingLabelText='Kod pocztowy' defaultValue={postalCode} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <TextField name='city' floatingLabelText='Miasto' defaultValue={city} disabled={disabledEdit} onChange={ data => this.handleChange(data)}/> <br/>
-            <Button label="EDYTUJ" floatingLabelText='siema' primary={true} onClick={this.handleClickEdit} onChange={ data => this.handleChange(data)}/>
-            { showSaveButton && this.saveButton() }
+            <Field name="name" label="Nazwa Firmy" defaultValue={name} />
+            <Field name="nip" label="NIP" defaultValue={nip} />
+            <Field name="regon" label="Regon" defaultValue={regon} />
+            <Field name="street" label="Ulica" defaultValue={street} />
+            <Field name="buildingNumber" label="Numer budynku" defaultValue={buildingNumber} />
+            <Field name="flatNumber" label="Numer lokalu" defaultValue={flatNumber} />
+            <Field name="postalCode" label="Kod pocztowy" defaultValue={postalCode} />
+            <Field name="city" label="Miasto" defaultValue={city} />
+            <Button label="Edytuj" primary={true} onClick={this.handleClickEdit} onChange={ data => this.handleChange(data)}/>
+            { showSaveButton && <Button label="Zapisz" secondary={true} onClick={this.handleClickSave} /> }
           </Page>
         </Container>
       </div>

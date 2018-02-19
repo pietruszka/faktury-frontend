@@ -37,7 +37,7 @@ export default class Homeview extends React.Component {
   handleLogout = (e) => {
     deleteCookie('token');
     console.log(e);
-    // props.history.push('/login');
+    window.open(`${window.location.protocol + '//' + window.location.host}/login`, '_self');
  };
 
   render() {

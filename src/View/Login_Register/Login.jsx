@@ -15,20 +15,16 @@ class Login extends Component {
         email: '',
         password: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-   this.setState({ [event.target.name] : event.target.value });
-}
+  handleChange = ({ target: { name, value } }) => this.setState({ [name] : value });
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
      const request = axios.post(`http://localhost:3005/api/login`, this.state).then( (value) => {
        setCookie('token', `${value.data.token}`);
-       this.props.history.push('/invoices');
+       const { protocol, host } = window.location;
+       window.open(`${protocol}//${host}/invoices`, '_self');
      });
   }
 
@@ -49,7 +45,5 @@ class Login extends Component {
         )
     }
 };
-const LoginWithRouter = withRouter(Login)
 
-
- export default LoginWithRouter;
+ export default withRouter(Login);

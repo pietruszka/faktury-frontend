@@ -1,6 +1,5 @@
 // React
 import React, { Component, Fragment } from 'react';
-import { withRouter } from 'react-router';
 // Material UI
 import {
   Table,
@@ -18,41 +17,37 @@ import { fetchInvoices } from './../../../Actions/Index';
 import DeleteDialog from './../../../Components/DeleteDialog';
 import PdfDialog from './../../../Components/PdfDialog';
 
-
-
-
 class Revenues extends Component {
-
   componentDidMount() {
     this.props.fetchInvoices();
   }
 
-  renderTable = (invoice, i) => {
-    if(!invoice.items || invoice.isExpense === true ) {
+  renderTable = (invoice) => {
+    if (!invoice.items || invoice.isExpense === true) {
       return null;
     }
 
-    return(
+    return (
       <TableRow key={invoice._id} >
         <TableRowColumn>{invoice.date.created.substr(0, 10)}</TableRowColumn>
         <TableRowColumn>{invoice.invoiceNumber}</TableRowColumn>
         <TableRowColumn>{invoice.contractor.name}</TableRowColumn>
         <TableRowColumn>{invoice.net}</TableRowColumn>
         <TableRowColumn>{invoice.gross}</TableRowColumn>
-        <TableRowColumn><DeleteDialog id={invoice._id}/></TableRowColumn>
-        <TableRowColumn><PdfDialog invoiceInfo={invoice}/></TableRowColumn>
+        <TableRowColumn><DeleteDialog id={invoice._id} /></TableRowColumn>
+        <TableRowColumn><PdfDialog invoiceInfo={invoice} /></TableRowColumn>
       </TableRow>
     );
   }
 
   render() {
     console.log(this.props);
-   if (!this.props.invoice.data){
-     return <div>Loading...</div>;
+    if (!this.props.invoice.data) {
+      return <div>Loading...</div>;
     }
-      return(
+    return (
         <Fragment>
-          <Link to='/add/revenue'><Button label="Dodaj Fakturę" primary={true} /></Link>
+          <Link to='/add/revenue'><Button label="Dodaj Fakturę" primary /></Link>
           <Table>
             <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
               <TableRow>
@@ -70,12 +65,11 @@ class Revenues extends Component {
             </TableBody>
           </Table>
         </Fragment>
-      )
-    }
+    )
+  }
 }
-const RevenuesWithRouter = withRouter(Revenues);
 
 function mapStateToProps(state) {
   return { invoice: state.invoice };
 }
- export default withRouter(connect(mapStateToProps, { fetchInvoices }) (Revenues));
+ export default connect(mapStateToProps, { fetchInvoices })(Revenues);
