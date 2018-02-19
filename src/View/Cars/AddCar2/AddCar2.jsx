@@ -8,6 +8,8 @@ import { addVehicle, fetchUser } from './../../../Actions/Index';
 import { connect } from 'react-redux';
 import { validate } from './../validateCar';
 
+import { Form } from '../AddCar_style';
+
 const style = {
   margin: 12,
 };
@@ -55,7 +57,7 @@ class AddCar2 extends Component {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     console.log(this.props);
     return (
-      <form onSubmit={handleSubmit(this.onSubmit)}>
+      <Form onSubmit={handleSubmit(this.onSubmit)}>
         <Field name="name" component={renderTextField} floatingLabelText="Opis/Nazwa" />
 
         <Field name="registerNumber" component={renderTextField} floatingLabelText="Numer rejestracyjny" />
@@ -82,7 +84,7 @@ class AddCar2 extends Component {
           <RaisedButton label="Dodaj" primary={true} type="submit" disabled={pristine || submitting} style={style} />
           <RaisedButton label="Wyczyść" secondary={true} style={style} disabled={pristine || submitting} onClick={reset} />
         </div>
-      </form>
+      </Form>
     )
 	}
 }

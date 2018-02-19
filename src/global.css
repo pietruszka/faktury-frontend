@@ -1,5 +1,5 @@
 @font-face {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     src: url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 }
 
@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {

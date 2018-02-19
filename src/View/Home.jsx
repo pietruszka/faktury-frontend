@@ -51,7 +51,7 @@ export default class Homeview extends React.Component {
               <Link to='/invoices'><MenuItem onClick={this.handleClose}>Faktury</MenuItem></Link>
               <Link to='/cars'><MenuItem onClick={this.handleClose}>Pojazdy</MenuItem></Link>
               <Link to='/settings'><MenuItem onClick={this.handleClose}>Ustawienia</MenuItem></Link>
-              <RaisedButton label="wyloguj" secondary={true} onClick={this.handleLogout} />
+              <MenuButton label="wyloguj" secondary={true} onClick={this.handleLogout} />
             </Drawer>
               <Route path='/invoices' component={InvoicesMain} />
               <Route path='/cars' component={CarsMain} />
