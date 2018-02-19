@@ -11,6 +11,7 @@ export const UPDATE_USER = 'UPDATE_USER';
 export const ADD_USER = 'ADD_USER';
 export const LOGIN_USER = 'LOGIN_USER';
 export const UPLOAD_FILE = 'UPLOAD_FILE';
+export const GENERATE_PDF = 'GENERATE_PDF';
 
 export function fetchInvoices() {
   const token = getCookie('token');
@@ -129,6 +130,18 @@ export function uploadFile(file, cb) {
   console.log(request);
   return {
     type: UPLOAD_FILE,
+    payload: null
+  }
+}
+
+export function generatePdf(id){
+  const token = getCookie('token');
+  const config = {
+  headers: {'authorization': token}
+};
+  const request = axios.get(`http://localhost:3005/api/pdf/${id}`, config).then((value)=> console.log(value));
+  return {
+    type: GENERATE_PDF,
     payload: null
   }
 }
