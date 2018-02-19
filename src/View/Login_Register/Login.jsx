@@ -3,7 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import { Container, Page, Form, SubmitButton } from './Form_style';
 import axios from 'axios';
-
+import { URL } from './../../Actions/Index';
 
 import { setCookie } from './../../cookies';
 import { withRouter } from 'react-router';
@@ -21,7 +21,7 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-     const request = axios.post(`http://localhost:3005/api/login`, this.state).then( (value) => {
+     const request = axios.post(`${URL}/login`, this.state).then( (value) => {
        setCookie('token', `${value.data.token}`);
        const { protocol, host } = window.location;
        window.open(`${protocol}//${host}/invoices`, '_self');

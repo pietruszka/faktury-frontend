@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { fetchInvoices, generatePdf } from './../Actions/Index';
 import { connect } from 'react-redux';
 import { Title, SubTitle, Container, Wrapper } from './PdfDialog_style';
+import { URL } from './../Actions/Index';
 
 class DeleteDialog extends React.Component {
   state = {
@@ -20,7 +21,7 @@ class DeleteDialog extends React.Component {
   }
 
   render() {
-    const PdfUrl = `http://localhost:3005/api/pdf/${this.props.invoiceInfo._id}`;
+    const PdfUrl = `${URL}/pdf/${this.props.invoiceInfo._id}`;
     console.log(this.props.invoiceInfo);
     const actions = [
       <FlatButton

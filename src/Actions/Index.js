@@ -13,12 +13,15 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const UPLOAD_FILE = 'UPLOAD_FILE';
 export const GENERATE_PDF = 'GENERATE_PDF';
 
+export const URL = 'http://localhost:3005/api';
+
+
 export function fetchInvoices() {
   const token = getCookie('token');
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.get("http://localhost:3005/api/invoice", config);
+  const request = axios.get(`${URL}/invoice`, config);
 
   return {
     type: FETCH_INVOICES,
@@ -32,7 +35,7 @@ export function deleteInvoice(id, cb) {
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.delete(`http://localhost:3005/api/invoice/${id}`, config).then( () => cb() );
+  const request = axios.delete(`${URL}/invoice/${id}`, config).then( () => cb() );
   console.log(id);
 
   return{
@@ -46,7 +49,7 @@ export function addInvoice(invoice, cb) {
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.post(`http://localhost:3005/api/invoice`, invoice, config).then(()=> cb());
+  const request = axios.post(`${URL}/invoice`, invoice, config).then(()=> cb());
   return {
     type: ADD_INVOICE,
     payload: request
@@ -58,7 +61,7 @@ export function fetchUser(){
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.get(`http://localhost:3005/api/user`, config);
+  const request = axios.get(`${URL}/user`, config);
   return {
     type: FETCH_USER,
     payload: request
@@ -70,7 +73,7 @@ export function addVehicle(vehicle, cb) {
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.post(`http://localhost:3005/api/vehicle`, vehicle, config).then( ()=> cb() );
+  const request = axios.post(`${URL}/vehicle`, vehicle, config).then( ()=> cb() );
   return {
     type: ADD_VEHICLE,
     payload: null
@@ -83,7 +86,7 @@ export function deleteVehicle(id, cb) {
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.delete(`http://localhost:3005/api/vehicle/${id}`, config).then( () => cb() );
+  const request = axios.delete(`${URL}/vehicle/${id}`, config).then( () => cb() );
   console.log(id);
 
   return{
@@ -97,7 +100,7 @@ export function updateUser(user, cb) {
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.put(`http://localhost:3005/api/user`, user, config).then( ()=> cb() );
+  const request = axios.put(`${URL}/user`, user, config).then( ()=> cb() );
   console.log(request);
   return {
     type: UPDATE_USER,
@@ -110,7 +113,7 @@ export function registerUser(user) {
   const config = {
   headers: {'authorization': token}
 };
-  const request = axios.post(`http://localhost:3005/api/register`, user, config);
+  const request = axios.post(`${URL}/register`, user, config);
   return {
     type: ADD_USER,
     payload: null
@@ -126,7 +129,7 @@ export function uploadFile(file, cb) {
   const formData = new FormData();
   formData.append('invoice', file[0]);
   console.log(formData);
-  const request = axios.post(`http://localhost:3005/api/file`, formData, config).then((data)=>{cb(data.data.data[0])});
+  const request = axios.post(`${URL}/file`, formData, config).then((data)=>{cb(data.data.data[0])});
   console.log(request);
   return {
     type: UPLOAD_FILE,
